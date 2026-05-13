@@ -1,311 +1,181 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кораблик78 — прогулки по Петербургу</title>
 
-<title>КОРАБЛИК78</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header class="header">
-
-<div class="logo">
-КОРАБЛИК78
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">КОРАБЛИК78</div>
+  <nav>
+    <a href="#boats">Катера</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
 </div>
 
-<nav>
-<a href="#boats">Катера</a>
-<a href="#gallery">Галерея</a>
-<a href="#contacts">Контакты</a>
-</nav>
-
-</header>
-
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-overlay"></div>
 
-<div class="hero-overlay"></div>
+  <div class="hero-content">
 
-<div class="hero-content">
+    <div class="hero-left">
+      <div class="premium">PRIVATE BOAT EXPERIENCE</div>
 
-<div class="hero-left">
+      <h1>Прогулки по рекам и каналам Санкт-Петербурга</h1>
 
-<p class="premium">
-PRIVATE BOAT TOURS
-</p>
+      <div class="subtitle">
+        Развод мостов • Ночной город • Финский залив • Индивидуальные маршруты до 7 человек
+      </div>
 
-<h1>
-Прогулки на катере<br>
-по Санкт-Петербургу
-</h1>
+      <div class="hero-buttons">
+        <a class="gold-btn" href="https://t.me/korablik_78">Забронировать</a>
+        <a class="glass-btn" href="tel:+79605828419">Позвонить</a>
+      </div>
+    </div>
 
-<p class="subtitle">
-Развод мостов • Каналы • Нева • Финский залив
-</p>
+    <div class="hero-bottom">
+      <div>
+        <span>Катера</span>
+        <p>2 премиальных судна</p>
+      </div>
+      <div>
+        <span>Вместимость</span>
+        <p>до 7 гостей</p>
+      </div>
+      <div>
+        <span>Маршруты</span>
+        <p>центр + залив</p>
+      </div>
+    </div>
 
-<div class="hero-buttons">
-
-<a href="tel:+79605828419" class="gold-btn">
-Позвонить
-</a>
-
-<a href="https://wa.me/79605828419" class="glass-btn">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-bottom">
-
-<div>
-<span>Локация</span>
-<p>Санкт-Петербург</p>
-</div>
-
-<div>
-<span>Вместимость</span>
-<p>До 7 гостей</p>
-</div>
-
-<div>
-<span>Формат</span>
-<p>Private tours</p>
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features">
+  <h2>Почему нас выбирают</h2>
 
-<h2>
-Почему выбирают нас
-</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>Приватность</h3>
+      <p>Только ваша компания, без посторонних людей.</p>
+    </div>
 
-<div class="features-grid">
+    <div class="feature-card">
+      <h3>Развод мостов</h3>
+      <p>Лучшие виды ночного Петербурга с воды.</p>
+    </div>
 
-<div class="feature-card">
-<h3>Приватные прогулки</h3>
-<p>Только ваша компания без посторонних.</p>
-</div>
+    <div class="feature-card">
+      <h3>Комфорт</h3>
+      <p>Пледы, уют, спокойная атмосфера на борту.</p>
+    </div>
 
-<div class="feature-card">
-<h3>Развод мостов</h3>
-<p>Ночной Петербург с лучших ракурсов.</p>
-</div>
-
-<div class="feature-card">
-<h3>Пледы и комфорт</h3>
-<p>Уютная атмосфера в любую погоду.</p>
-</div>
-
-<div class="feature-card">
-<h3>Центр города</h3>
-<p>Старт прямо из сердца Петербурга.</p>
-</div>
-
-</div>
-
+    <div class="feature-card">
+      <h3>Маршруты</h3>
+      <p>Центр города, Невa, Финский залив.</p>
+    </div>
+  </div>
 </section>
 
-<section class="boats" id="boats">
+<!-- BOATS -->
+<section id="boats" class="boats">
+  <h2>Наши катера</h2>
 
-<h2>
-Наши катера
-</h2>
+  <div class="boats-grid">
 
-<div class="boats-grid">
+    <div class="boat-card">
+      <img src="images/white.jpg">
+      <div class="boat-content">
+        <h3>WHITE PREMIUM</h3>
+        <p>Премиальный белый катер для комфортных прогулок.</p>
 
-<div class="boat-card">
+        <ul>
+          <li>До 7 гостей</li>
+          <li>Пледы и комфорт</li>
+          <li>Туалет на борту</li>
+        </ul>
 
-<img src="images/white.jpg">
+        <button class="gold-btn" onclick="openModal('whiteModal')">Прайс</button>
+      </div>
+    </div>
 
-<div class="boat-content">
+    <div class="boat-card">
+      <img src="images/turquoise.jpg">
+      <div class="boat-content">
+        <h3>CLASSIC TURQUOISE</h3>
+        <p>Стильный катер для прогулок по каналам и Неве.</p>
 
-<h3>WHITE PREMIUM</h3>
+        <ul>
+          <li>До 7 гостей</li>
+          <li>Пледы</li>
+          <li>Комфортная посадка</li>
+        </ul>
 
-<p>
-Премиальный катер с туалетом на борту,
-идеален для романтических прогулок
-и разводов мостов.
-</p>
+        <button class="gold-btn" onclick="openModal('blueModal')">Прайс</button>
+      </div>
+    </div>
 
-<ul>
-<li>До 7 гостей</li>
-<li>Туалет на борту</li>
-<li>Premium комфорт</li>
-<li>Пледы</li>
-</ul>
-
-<button class="gold-btn" onclick="openModal('whiteModal')">
-Прайс
-</button>
-
-</div>
-
-</div>
-
-<div class="boat-card">
-
-<img src="images/blue.jpg">
-
-<div class="boat-content">
-
-<h3>CLASSIC TURQUOISE</h3>
-
-<p>
-Стильный катер для прогулок,
-фотосессий и отдыха компанией.
-</p>
-
-<ul>
-<li>До 7 гостей</li>
-<li>Фотосессии</li>
-<li>Музыка</li>
-<li>Комфортный отдых</li>
-</ul>
-
-<button class="gold-btn" onclick="openModal('blueModal')">
-Прайс
-</button>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-<section class="gallery" id="gallery">
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <h2>Галерея</h2>
 
-<h2>
-Галерея
-</h2>
-
-<div class="gallery-grid">
-
-<img src="images/hero.jpg">
-<img src="images/white.jpg">
-<img src="images/blue.jpg">
-
-</div>
-
+  <div class="gallery-grid">
+    <img src="images/g1.jpg">
+    <img src="images/g2.jpg">
+    <img src="images/g3.jpg">
+    <img src="images/g4.jpg">
+  </div>
 </section>
 
-<section class="contacts" id="contacts">
+<!-- CONTACTS -->
+<section id="contacts" class="contacts">
+  <h2>Контакты</h2>
 
-<h2>
-Контакты
-</h2>
-
-<p>
-📞 +7 (960) 582-84-19
-</p>
-
-<p>
-📍 наб. канала Грибоедова, 73
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://wa.me/79605828419" class="gold-btn">
-WhatsApp
-</a>
-
-<a href="https://t.me/korablik_78" class="glass-btn">
-Telegram
-</a>
-
-</div>
-
+  <p>📞 +7 960 582-84-19</p>
+  <p>✈️ @korablik_78</p>
+  <p>💬 WhatsApp: +7 960 582-84-19</p>
 </section>
 
-<div class="modal" id="whiteModal">
+<!-- MODAL WHITE -->
+<div id="whiteModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('whiteModal')">&times;</span>
 
-<div class="modal-content">
+    <h2>WHITE PREMIUM</h2>
 
-<span class="close" onclick="closeModal('whiteModal')">
-×
-</span>
+    <div class="price-item"><span>30 мин</span><strong>2 990 ₽</strong></div>
+    <div class="price-item"><span>1 час</span><strong>5 990 ₽</strong></div>
+    <div class="price-item"><span>2 часа</span><strong>11 990 ₽</strong></div>
+    <div class="price-item"><span>Развод мостов</span><strong>12 000 ₽</strong></div>
 
-<h2>WHITE PREMIUM</h2>
-
-<div class="price-item">
-<span>Развод мостов — 2ч</span>
-<strong>12 000 ₽</strong>
+  </div>
 </div>
 
-<div class="price-item">
-<span>Каналы — 30 мин</span>
-<strong>2 990 ₽</strong>
-</div>
+<!-- MODAL BLUE -->
+<div id="blueModal" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeModal('blueModal')">&times;</span>
 
-<div class="price-item">
-<span>Нева — 1ч</span>
-<strong>5 990 ₽</strong>
-</div>
+    <h2>CLASSIC TURQUOISE</h2>
 
-<div class="price-item">
-<span>Финский залив — 2.5ч</span>
-<strong>11 900 ₽</strong>
-</div>
+    <div class="price-item"><span>30 мин</span><strong>2 490 ₽</strong></div>
+    <div class="price-item"><span>1 час</span><strong>4 990 ₽</strong></div>
+    <div class="price-item"><span>2 часа</span><strong>9 990 ₽</strong></div>
 
-<div class="price-item">
-<span>Романтическая прогулка</span>
-<strong>9 900 ₽</strong>
-</div>
-
-</div>
-
-</div>
-
-<div class="modal" id="blueModal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('blueModal')">
-×
-</span>
-
-<h2>CLASSIC TURQUOISE</h2>
-
-<div class="price-item">
-    <span>Каналы — 30 мин</span>
-<strong>2 490 ₽</strong>
-</div>
-
-<div class="price-item">
-<span>Каналы — 1ч</span>
-<strong>4 990 ₽</strong>
-</div>
-
-<div class="price-item">
-<span>Фотосессия</span>
-<strong>5 000 ₽</strong>
-</div>
-
-<div class="price-item">
-<span>Развод мостов</span>
-<strong>12 000 ₽</strong>
-</div>
-
-</div>
-
+  </div>
 </div>
 
 <script src="script.js"></script>
