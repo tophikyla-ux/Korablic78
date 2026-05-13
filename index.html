@@ -1,10 +1,9 @@
-html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кораблик78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
+    <title>КОРАБЛИК78 | Прогулки по рекам и каналам Санкт-Петербурга</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,10 +12,10 @@ html
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <span class="logo-icon">⚓</span> КОРАБЛИК78
+                <span>⚓</span> КОРАБЛИК78
             </div>
             <nav class="nav">
-                <a href="#about" class="nav-link">Главная</a>
+                <a href="#main" class="nav-link">Главная</a>
                 <a href="#routes" class="nav-link">Маршруты</a>
                 <a href="#prices" class="nav-link">Цены</a>
                 <a href="#gallery" class="nav-link">Галерея</a>
@@ -25,8 +24,8 @@ html
             </nav>
             <div class="header-right">
                 <div class="header-socials">
-                    <a href="https://t.me" target="_blank" class="social-icon tg-icon">✈</a>
-                    <a href="https://wa.me" target="_blank" class="social-icon wa-icon">📞</a>
+                    <a href="https://t.me" target="_blank" class="social-icon tg-icon">💬</a>
+                    <a href="https://wa.me" target="_blank" class="social-icon wa-icon">🟢</a>
                 </div>
                 <button class="btn-gold open-modal-btn">ЗАБРОНИРОВАТЬ</button>
             </div>
@@ -34,62 +33,64 @@ html
     </header>
 
     <!-- Главный экран -->
-    <section id="about" class="hero">
-        <div class="container hero-container-layout">
-            <div class="hero-text">
-                <h1>КОРАБЛИК78</h1>
-                <p class="subtitle">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
-                <div class="hero-info-line">Развод мостов • Закаты • Индивидуальные маршруты</div>
-                <div class="hero-guests">До 7 гостей на борту</div>
-                
-                <div class="hero-buttons">
-                    <button class="btn-gold open-modal-btn">Забронировать прогулку</button>
-                    <a href="https://t.me" target="_blank" class="btn-outline-tg">TELEGRAM</a>
-                    <a href="https://wa.me" target="_blank" class="btn-outline-wa">WHATSAPP</a>
-                </div>
+    <section id="main" class="hero">
+        <div class="container hero-content">
+            <h1 class="main-title">КОРАБЛИК78</h1>
+            <p class="subtitle">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
+            <p class="hero-desc">Развод мостов • Закаты • Индивидуальные маршруты<b
+ 7 гостей на борту</p>
+            <div class="hero-buttons">
+                <button class="btn-gold-filled open-modal-btn">Забронировать прогулку</button>
+                <a href="https://t.me" target="_blank" class="btn-outline">TELEGRAM</a>
+                <a href="https://wa.me" target="_blank" class="btn-outline">WHATSAPP</a>
             </div>
-            <!-- Блок для главной фотографии катера с разводным мостом -->
-            <div class="hero-image-placeholder">
-                <div class="photo-stub">Место для главного фото (Катер на фоне моста)</div>
+            <div class="scroll-down">
+                <span class="arrow-down">⚓</span> Листайте ниже
             </div>
         </div>
     </section>
 
-    <!-- Преимущества (Иконки под главным блоком) -->
+    <!-- Преимущества -->
     <section class="features">
         <div class="container features-grid">
             <div class="feature-item">
                 <div class="feature-icon">⚓</div>
                 <h3>ПРИВАТНЫЕ ПРОГУЛКИ</h3>
-                <p>Только ваша компания без посторонних</p>
+                <p>Только ваша компания без посторонних.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🌉</div>
                 <h3>РАЗВОД МОСТОВ С ВОДЫ</h3>
-                <p>Лучший вид на ночной Петербург</p>
+                <p>Лучший вид на ночной Петербург.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">📍</div>
                 <h3>ЦЕНТР ГОРОДА</h3>
-                <p>Удобный причал в самом сердце Петербурга</p>
+                <p>Удобный причал в самом сердце Петербурга.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">✨</div>
                 <h3>АТМОСФЕРА PREMIUM</h3>
-                <p>Комфортные катера до 7 гостей</p>
+                <p>Комфортные катера до 7 гостей.</p>
             </div>
         </div>
     </section>
 
-    <!-- Популярные маршруты -->
+    <!-- Популярные маршруты (Исправлено под скриншот) -->
     <section id="routes" class="section">
         <div class="container">
             <h2 class="section-title">ПОПУЛЯРНЫЕ МАРШРУТЫ</h2>
             <div class="grid routes-grid">
-                <!-- Карта 1 -->
                 <div class="card">
-                    <div class="card-img-box"><div class="photo-stub">Фото: Развод мостов</div></div>
+                    <div class="card-img" style="background-color: #121c30;"></div>
                     <div class="card-body">
                         <h3>РАЗВОД МОСТОВ</h3>
                         <p>Ночной маршрут по Неве к главным мостам города.</p>
                         <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-color: #121c30;"></div>
+                    <div class="card-body">
+                        <h3>РЕКИ И КАНАЛЫ</h3>
+                        <p>Атмосферная прогулка по историческому центру.</p>
