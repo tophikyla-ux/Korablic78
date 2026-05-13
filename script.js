@@ -1,16 +1,22 @@
 function openModal(id){
-  document.getElementById(id).style.display = "flex";
+document.getElementById(id).style.display='flex';
 }
+
 function closeModal(id){
-  document.getElementById(id).style.display = "none";
+document.getElementById(id).style.display='none';
 }
-window.onclick = function(event){
-  const whiteModal = document.getElementById('whiteModal');
-  const blueModal = document.getElementById('blueModal');
-  if(event.target === whiteModal){
-    whiteModal.style.display = "none";
-  }
-  if(event.target === blueModal){
-    blueModal.style.display = "none";
-  }
+
+window.onclick=function(event){
+
+const white=document.getElementById('whiteModal');
+const blue=document.getElementById('blueModal');
+
+if(event.target==white){
+white.style.display='none';
+}
+
+if(event.target==blue){
+blue.style.display='none';
+}
+
 }
