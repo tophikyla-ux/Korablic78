@@ -1,296 +1,261 @@
-<!DOCTYPE html>
-<html lang="ru"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КОРАБЛИК78 | Прогулки по рекам и каналам Санкт-Петербурга</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <span>⚓</span> КОРАБЛИК78
-            </div>
-            <nav class="nav">
-                <a href="#main" class="nav-link">Главная</a>
-                <a href="#routes" class="nav-link">Маршруты</a>
-                <a href="#prices" class="nav-link">Цены</a>
-                <a href="#gallery" class="nav-link">Галерея</a>
-                <a href="#reviews" class="nav-link">Отзывы</a>
-                <a href="#contacts" class="nav-link">Контакты</a>
-            </nav>
-            <div class="header-right">
-                <div class="header-socials">
-                    <a href="https://t.me" target="_blank" class="social-icon tg-icon">💬</a>
-                    <a href="https://wa.me" target="_blank" class="social-icon wa-icon">🟢</a>
-                </div>
-                <button class="btn-gold open-modal-btn">ЗАБРОНИРОВАТЬ</button>
-            </div>
-        </div>
-    </header>
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- Главный экран -->
-    <section id="main" class="hero">
-        <div class="container hero-content">
-            <h1 class="main-title">КОРАБЛИК78</h1>
-            <p class="subtitle">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
-            <p class="hero-desc">Развод мостов • Закаты • Индивидуальные маршруты<b
- 7 гостей на борту</p>
-            <div class="hero-buttons">
-                <button class="btn-gold-filled open-modal-btn">Забронировать прогулку</button>
-                <a href="https://t.me" target="_blank" class="btn-outline">TELEGRAM</a>
-                <a href="https://wa.me" target="_blank" class="btn-outline">WHATSAPP</a>
-            </div>
-            <div class="scroll-down">
-                <span class="arrow-down">⚓</span> Листайте ниже
-            </div>
-        </div>
-    </section>
+body {
+    background-color: #060b14;
+    color: #ffffff;
+}
 
-    <!-- Преимущества -->
-    <section class="features">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">⚓</div>
-                <h3>ПРИВАТНЫЕ ПРОГУЛКИ</h3>
-                <p>Только ваша компания без посторонних.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌉</div>
-                <h3>РАЗВОД МОСТОВ С ВОДЫ</h3>
-                <p>Лучший вид на ночной Петербург.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📍</div>
-                <h3>ЦЕНТР ГОРОДА</h3>
-                <p>Удобный причал в самом сердце Петербурга.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">✨</div>
-                <h3>АТМОСФЕРА PREMIUM</h3>
-                <p>Комфортные катера до 7 гостей.</p>
-            </div>
-        </div>
-    </section>
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <!-- Популярные маршруты (Исправлено под скриншот) -->
-    <section id="routes" class="section">
-        <div class="container">
-            <h2 class="section-title">ПОПУЛЯРНЫЕ МАРШРУТЫ</h2>
-            <div class="grid routes-grid">
-                <div class="card">
-                    <div class="card-img" style="background-color: #121c30;"></div>
-                    <div class="card-body">
-                        <h3>РАЗВОД МОСТОВ</h3>
-                        <p>Ночной маршрут по Неве к главным мостам города.</p>
-                        <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-color: #121c30;"></div>
-                    <div class="card-body">
-                        <h3>РЕКИ И КАНАЛЫ</h3>
-                        <p>Атмосферная прогулка по историческому центру.</p>
+/* Кнопки */
+.btn-gold {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
 
+.btn-gold:hover {
+    background-color: #d4af37;
+    color: #060b14;
+}
 
-<button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-color: #121c30;"></div>
-                    <div class="card-body">
-                        <h3>ЗАКАТ НА ВОДЕ</h3>
-                        <p>Золотой час Петербурга с лучших ракурсов.</p>
-                        <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-color: #121c30;"></div>
-                    <div class="card-body">
-                        <h3>ИНДИВИДУАЛЬНЫЙ МАРШРУТ</h3>
-                        <p>Подберем прогулку под ваше настроение.</p>
-                        <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.btn-gold-filled {
+    background-color: #d4af37;
+    color: #060b14;
+    border: none;
+    padding: 14px 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
 
-    <!-- Наши катера -->
-    <section id="boats" class="section boats-section">
-        <div class="container">
-            <h2 class="section-title">НАШИ КАТЕРА</h2>
-            <div class="grid boats-grid">
-                <div class="boat-card-wide">
-                    <div class="boat-img" style="background-color: #121c30;"></div>
-                    <div class="boat-info">
-                        <h3>KATEP PREMIUM</h3>
-                        <ul class="boat-specs">
-                            <li>⚓ До 7 гостей</li>
-                            <li>🛋 Мягкие диваны</li>
-                            <li>🎵 Музыка и подсветка</li>
-                            <li>☂ Тент от дождя и солнца</li>
-                            <li>🥂 Стаканы для ваших напитков</li>
-                        </ul>
-                        <button class="btn-gold open-modal-btn">УЗНАТЬ ПОДРОБНЕЕ</button>
-                    </div>
-                </div>
-                <div class="boat-card-wide">
-                    <div class="boat-img" style="background-color: #121c30;"></div>
-                    <div class="boat-info">
-                        <h3>KATEP CLASSIC</h3>
-                        <ul class="boat-specs">
-                            <li>⚓ До 7 гостей</li>
-                            <li>✨ Уютная атмосфера</li>
-                            <li>🧣 Пледы для гостей</li>
-                            <li>📸 Отличный обзор для фотосессий</li>
-                            <li>⚓ Прогулки в любую погоду</li>
-                        </ul>
-                        <button class="btn-gold open-modal-btn">УЗНАТЬ ПОДРОБНЕЕ</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
 
-    <!-- Галерея -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title">ГАЛЕРЕЯ</h2>
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slide active" style="background-color: #1a263f; display: flex; align-items: center; justify-content: center;">Фото 1</div>
-                    <div class="slide" style="background-color: #223152; display: flex; align-items: center; justify-content: center;">Фото 2</div>
-                    <div class="slide" style="background-color: #1b2845; display: flex; align-items: center; justify-content: center;">Фото 3</div>
-                </div>
-                <button class="slider-btn prev-btn">❮</button>
-                <button class="slider-btn next-btn">❯</button>
-            </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="card-link open-modal-btn">СМОТРЕТЬ ВСЕ ФОТО</button>
-            </div>
-        </div>
-    </section>
+.btn-outline:hover {
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.05);
+}
 
-    <!-- Цены и Отзывы -->
-    <section id="prices" class="section prices-section">
-        <div class="container prices-container">
-            <div class="prices-block">
-                <h2 class="block-title">ЦЕНЫ <span>➕</span></h2>
-                <ul class="price-list">
-                    <li><span>Реки и каналы (1 час)</span> <span class="dots"></span> <span class="price-val">от 7 000 ₽</span></li>
-                    <li><span>Развод мостов (1.5 - 2.5 часа)</span> <span class="dots"></span> <span class="price-val">от 12 000 ₽</span></li>
-                    <li><span>Закат на воде (1.5 часа)</span> <span class="dots"></span> <span class="price-val">от 9 000 ₽</span></li>
-                    <li><span>Дневная прогулка (1.5 часа)</span> <span class="dots"></span> <span class="price-val">от 10 000 ₽</span></li>
-                    <li><span>Индивидуальный маршрут</span> <span class="dots"></span> <span class="price-val">по запросу</span></li>
-                </ul>
-                <p class="price-notice">*Цены указаны за аренду всего катера. До 7 гостей.</p>
-            </div>
+/* Шапка */
+.header {
+    background-color: #060b14;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-            <div id="reviews" class="reviews-block">
-                <h2 class="block-title">ОТЗЫВЫ <span>➕</span></h2>
-                <div class="reviews-slider">
-                    <div class="review-item">
-                        <div class="review-header">
-                            <span class="review-avatar">👤</span>
-                            <div>
-                                <h4>Анна и Андрей</h4>
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
-                            </div>
-                        </div>
-                        <p class="review-text">Атмосферная прогулка по каналам Санкт-Петербурга. Лучший вид на ночной город! Катер чистый и комфортный. Рекомендуем!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
 
-    <!-- Подвал и Контакты -->
-    <footer id="contacts" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <div class="logo"><span>⚓</span> КОРАБЛИК78</div>
-                <p class="footer-text">Аренда катеров в Санкт-Петербурге. Индивидуальные прогулки по рекам и каналам, организация праздников на воде, ночные экскурсии на развод мостов.</p>
-            </div>
-            <div class="footer-contacts">
-                <h3>КОНТАКТЫ</h3>
-                <p>📍 Причал: наб. реки Фонтанки, 73</p>
-                <p>📞 +7 911 123-45-67</p>
-                <p>💬 Telegram</p>
-                <p>🟢 WhatsApp</p>
-                <p>⏰ Ежедневно с 10:00 до 00:00</p>
-            </div>
-        </div>
-    </footer>
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
 
-    <!-- Всплывающее окно для бронирования -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Забронировать прогулку</h2>
-            <form id="tgForm">
-                <input type="text" id="userName" placeholder="Ваше имя" required>
-                <input type="tel" id="userPhone" placeholder="Номер телефона" required>
-                <select id="routeSelect">
-                    <option value="Развод мостов">Развод мостов</option>
-                    <option value="Реки и каналы">Реки и каналы</option>
-                    <option value="Закат на воде">Закат на воде</option>
-                    <option value="Индивидуальный маршрут">Индивидуальный маршрут</option>
-                </select>
-                <button type="submit" class="btn-gold-filled">Отправить заявку</button>
-            </form>
-            <div id="formStatus"></div>
-        </div>
-    </div>
+.logo span {
+    color: #d4af37;
+}
 
-    <!-- Кнопка Наверх -->
-    <button id="scrollTopBtn" title="Наверх">↑</button>
+.nav {
+    display: flex;
+    gap: 25px;
+}
 
-    <script>
-        const modal = document.getElementById("bookingModal");
-        const openBtns = document.querySelectorAll(".open-modal-btn");
-        const closeBtn = document.querySelector(".close-modal");
+.nav-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
 
-        openBtns.forEach(btn => btn.addEventListener("click", () => modal.style.display = "block"));
-        closeBtn.addEventListener("click", () => modal.style.display = "none");
-        window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+.nav-link:hover {
+    color: #ffffff;
+}
 
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        window.onscroll = function() {
-            if (document.body.scrollTo
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
+.header-socials {
+    display: flex;
+    gap: 12px;
+}
 
-p > 300 || document.documentElement.scrollTop > 300) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
-        scrollTopBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+.social-icon {
+    text-decoration: none;
+    font-size: 18px;
+}
 
-        const slides = document.querySelectorAll('.slide');
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        let currentSlide = 0;
+/* Главный блок */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #111a2e 0%, #060b14 100%);
+    padding-top: 80px;
+}
 
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            if (index >= slides.length) currentSlide = 0;
-            if (index < 0) currentSlide = slides.length - 1;
-            slides[currentSlide].classList.add('active');
-        }
-        if(nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => { currentSlide++; showSlide(currentSlide); });
-            prevBtn.addEventListener('click', () => { currentSlide--; showSlide(currentSlide); });
-        }
+.hero-content {
+    max-width: 800px;
+}
 
-        document.getElementById('tgForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('formStatus').innerText = "⏳ Функция отправки настраивается...";
-        });
-    </script>
-</body>
-</html>
+.main-title {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #d4af37;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero-desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.scroll-down {
+    margin-top: 60px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+}
+
+.scroll-down span {
+    display: block;
+    font-size: 18px;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+/* Преимущества */
+.features {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1;
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feature-item p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+}
+
+/* Маршруты (В стиле исходного скриншота) */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #0b111e;
+    border-radius: 4px;
+    overflow: hidden;
+    width: calc(25% - 18px);
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    height: 180px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom
