@@ -1,95 +1,44 @@
-html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кораблик78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <span class="logo-icon">⚓</span> КОРАБЛИК78
-            </div>
-            <nav class="nav">
-                <a href="#about" class="nav-link">Главная</a>
-                <a href="#routes" class="nav-link">Маршруты</a>
-                <a href="#prices" class="nav-link">Цены</a>
-                <a href="#gallery" class="nav-link">Галерея</a>
-                <a href="#reviews" class="nav-link">Отзывы</a>
-                <a href="#contacts" class="nav-link">Контакты</a>
-            </nav>
-            <div class="header-right">
-                <div class="header-socials">
-                    <a href="https://t.me" target="_blank" class="social-icon tg-icon">✈</a>
-                    <a href="https://wa.me" target="_blank" class="social-icon wa-icon">📞</a>
-                </div>
-                <button class="btn-gold open-modal-btn">ЗАБРОНИРОВАТЬ</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Главный экран -->
-    <section id="about" class="hero">
-        <div class="container hero-container-layout">
-            <div class="hero-text">
-                <h1>КОРАБЛИК78</h1>
-                <p class="subtitle">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
-                <div class="hero-info-line">Развод мостов • Закаты • Индивидуальные маршруты</div>
-                <div class="hero-guests">До 7 гостей на борту</div>
-                
-                <div class="hero-buttons">
-                    <button class="btn-gold open-modal-btn">Забронировать прогулку</button>
-                    <a href="https://t.me" target="_blank" class="btn-outline-tg">TELEGRAM</a>
-                    <a href="https://wa.me" target="_blank" class="btn-outline-wa">WHATSAPP</a>
-                </div>
-            </div>
-            <!-- Блок для главной фотографии катера с разводным мостом -->
-            <div class="hero-image-placeholder">
-                <div class="photo-stub">Место для главного фото (Катер на фоне моста)</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Преимущества (Иконки под главным блоком) -->
-    <section class="features">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">⚓</div>
-                <h3>ПРИВАТНЫЕ ПРОГУЛКИ</h3>
-                <p>Только ваша компания без посторонних</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌉</div>
-                <h3>РАЗВОД МОСТОВ С ВОДЫ</h3>
-                <p>Лучший вид на ночной Петербург</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📍</div>
-                <h3>ЦЕНТР ГОРОДА</h3>
-                <p>Удобный причал в самом сердце Петербурга</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">✨</div>
-                <h3>АТМОСФЕРА PREMIUM</h3>
-                <p>Комфортные катера до 7 гостей</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Популярные маршруты -->
-    <section id="routes" class="section">
-        <div class="container">
-            <h2 class="section-title">ПОПУЛЯРНЫЕ МАРШРУТЫ</h2>
-            <div class="grid routes-grid">
-                <!-- Карта 1 -->
-                <div class="card">
-                    <div class="card-img-box"><div class="photo-stub">Фото: Развод мостов</div></div>
-                    <div class="card-body">
-                        <h3>РАЗВОД МОСТОВ</h3>
-                        <p>Ночной маршрут по Неве к главным мостам города.</p>
-                        <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
+const TELEGRAM_TOKEN = 'ПОКА_ПУСТО';
+const CHAT_ID = 'ПОКА_ПУСТО';
+// Модальное окно
+const modal = document.getElementById("bookingModal");
+const openBtns = document.querySelectorAll(".open-modal-btn");
+const closeBtn = document.querySelector(".close-modal");
+openBtns.forEach(btn => btn.addEventListener("click", () => modal.style.display = "block"));
+closeBtn.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+// Кнопка Наверх
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {
+if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+scrollTopBtn.style.display = "block";
+} else {
+scrollTopBtn.style.display = "none";
+}
+};
+scrollTopBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+// Простой слайдер галереи
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+let currentSlide = 0;
+function showSlide(index) {
+slides.forEach(slide => slide.classList.remove('active'));
+if (index >= slides.length) currentSlide = 0;
+if (index < 0) currentSlide = slides.length - 1;
+slides[currentSlide].classList.add('active');
+}
+if(nextBtn && prevBtn) {
+nextBtn.addEventListener('click', () => { currentSlide++; showSlide(currentSlide); });
+prevBtn.addEventListener('click', () => { currentSlide--; showSlide(currentSlide); });
+}
+// Заглушка для формы (пока нет бота)
+document.getElementById('tgForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const statusDiv = document.getElementById('formStatus');
+if (TELEGRAM_TOKEN === 'ПОКА_ПУСТО') {
+statusDiv.innerText = "⏳ Форма работает! Создайте бота, чтобы получать уведомления.";
+statusDiv.style.color = "#d4af37";
+return;
+}
+});
