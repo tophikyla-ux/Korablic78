@@ -1,204 +1,95 @@
-HTML
-
+html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>КОРАБЛИК78</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кораблик78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container nav">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">⚓</span> КОРАБЛИК78
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">Главная</a>
+                <a href="#routes" class="nav-link">Маршруты</a>
+                <a href="#prices" class="nav-link">Цены</a>
+                <a href="#gallery" class="nav-link">Галерея</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header-right">
+                <div class="header-socials">
+                    <a href="https://t.me" target="_blank" class="social-icon tg-icon">✈</a>
+                    <a href="https://wa.me" target="_blank" class="social-icon wa-icon">📞</a>
+                </div>
+                <button class="btn-gold open-modal-btn">ЗАБРОНИРОВАТЬ</button>
+            </div>
+        </div>
+    </header>
 
-    <div class="logo">
-      КОРАБЛИК78
-    </div>
+    <!-- Главный экран -->
+    <section id="about" class="hero">
+        <div class="container hero-container-layout">
+            <div class="hero-text">
+                <h1>КОРАБЛИК78</h1>
+                <p class="subtitle">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
+                <div class="hero-info-line">Развод мостов • Закаты • Индивидуальные маршруты</div>
+                <div class="hero-guests">До 7 гостей на борту</div>
+                
+                <div class="hero-buttons">
+                    <button class="btn-gold open-modal-btn">Забронировать прогулку</button>
+                    <a href="https://t.me" target="_blank" class="btn-outline-tg">TELEGRAM</a>
+                    <a href="https://wa.me" target="_blank" class="btn-outline-wa">WHATSAPP</a>
+                </div>
+            </div>
+            <!-- Блок для главной фотографии катера с разводным мостом -->
+            <div class="hero-image-placeholder">
+                <div class="photo-stub">Место для главного фото (Катер на фоне моста)</div>
+            </div>
+        </div>
+    </section>
 
-    <div class="menu">
-      <a href="https://t.me/korablik_78">Telegram</a>
-      <a href="https://wa.me/79605828419">WhatsApp</a>
-    </div>
+    <!-- Преимущества (Иконки под главным блоком) -->
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⚓</div>
+                <h3>ПРИВАТНЫЕ ПРОГУЛКИ</h3>
+                <p>Только ваша компания без посторонних</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌉</div>
+                <h3>РАЗВОД МОСТОВ С ВОДЫ</h3>
+                <p>Лучший вид на ночной Петербург</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📍</div>
+                <h3>ЦЕНТР ГОРОДА</h3>
+                <p>Удобный причал в самом сердце Петербурга</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <h3>АТМОСФЕРА PREMIUM</h3>
+                <p>Комфортные катера до 7 гостей</p>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</header>
-
-<section class="hero">
-
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-
-    <h1>
-      Прогулки по рекам и каналам Санкт-Петербурга
-    </h1>
-
-    <p>
-      Развод мостов • Закаты • Индивидуальные маршруты • До 7 гостей
-    </p>
-
-    <div class="buttons">
-
-      <a class="btn gold" href="tel:+79605828419">
-        Позвонить
-      </a>
-
-      <a class="btn dark" href="https://t.me/korablik_78">
-        Telegram
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="advantages">
-
-  <div class="container">
-
-    <h2>Почему выбирают нас</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Приватные прогулки</h3>
-        <p>Только ваша компания без посторонних.</p>
-      </div>
-
-      <div class="card">
-        <h3>Развод мостов</h3>
-        <p>Лучший вид на ночной Петербург.</p>
-      </div>
-
-      <div class="card">
-        <h3>До 7 гостей</h3>
-        <p>Комфортный отдых для друзей и семьи.</p>
-      </div>
-
-      <div class="card">
-        <h3>Пледы и музыка</h3>
-        <p>Уютная атмосфера на обоих катерах.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="boats">
-
-  <div class="container">
-
-    <h2>Наши катера</h2>
-
-    <div class="boat">
-
-      <h3>WHITE PREMIUM</h3>
-
-      <p>
-        Премиальный катер для свиданий,
-        разводов мостов и вечерних прогулок.
-      </p>
-
-      <ul>
-        <li>До 7 гостей</li>
-        <li>Туалет на борту</li>
-        <li>Пледы</li>
-        <li>Музыка</li>
-      </ul>
-
-    </div>
-
-    <div class="boat">
-
-      <h3>CLASSIC TURQUOISE</h3>
-
-      <p>
-        Идеален для прогулок,
-        фотосессий и компаний друзей.
-      </p>
-
-      <ul>
-        <li>До 7 гостей</li>
-        <li>Фотосессии</li>
-        <li>Прогулки по каналам</li>
-        <li>Мероприятия</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="prices">
-
-  <div class="container">
-
-    <h2>Популярные маршруты</h2>
-
-    <div class="price-list">
-
-      <div class="price">
-        <h3>Развод мостов</h3>
-        <p>2 часа</p>
-        <span>от 12 000 ₽</span>
-      </div>
-
-      <div class="price">
-        <h3>Реки и каналы</h3>
-        <p>30 минут</p>
-        <span>от 2 490 ₽</span>
-      </div>
-
-      <div class="price">
-        <h3>Финский залив</h3>
-        <p>2.5 часа</p>
-        <span>от 11 900 ₽</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="contacts">
-
-  <div class="container">
-
-    <h2>Контакты</h2>
-
-    <p>📞 +7 (960) 582-84-19</p>
-
-    <p>📍 наб. канала Грибоедова, 73</p>
-
-    <div class="buttons">
-
-      <a class="btn gold" href="https://wa.me/79605828419">
-        WhatsApp
-      </a>
-
-      <a class="btn dark" href="https://t.me/korablik_78">
-        Telegram
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-</body>
-</html>
+    <!-- Популярные маршруты -->
+    <section id="routes" class="section">
+        <div class="container">
+            <h2 class="section-title">ПОПУЛЯРНЫЕ МАРШРУТЫ</h2>
+            <div class="grid routes-grid">
+                <!-- Карта 1 -->
+                <div class="card">
+                    <div class="card-img-box"><div class="photo-stub">Фото: Развод мостов</div></div>
+                    <div class="card-body">
+                        <h3>РАЗВОД МОСТОВ</h3>
+                        <p>Ночной маршрут по Неве к главным мостам города.</p>
+                        <button class="card-link open-modal-btn">ПОДРОБНЕЕ →</button>
