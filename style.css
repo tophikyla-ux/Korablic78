@@ -1,4 +1,332 @@
-* {
+ter;
+    font-weight: bold;
+    z-index: 99;
+}
+
+/* Подвал */
+.footer {
+    padding: 80px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-about {
+    max-width: 400px;
+}
+
+.footer-about .logo {
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+}
+
+.footer-contacts h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.footer-contacts p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+}
+
+/* Мобильная адаптивность */
+max-width: 768px {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .features-grid, .prices-container, .footer-grid {
+        flex-direction: column;
+        gap: 35px;
+    }
+    .card {
+        width: 100%;
+    }
+    .main-title {
+        font-size: 40px;
+    }
+}:12px;
+    color: #ffffff;
+}
+
+.card-body p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-link {
+    background: transparent;
+    border: none;
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+
+/* Катера */
+.boats-section {
+    background-color: #0b111e;
+}
+
+.boat-card-wide {
+    background-color: #060b14;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.boat-img {
+    height: 220px;
+    width: 100%;
+}
+
+.boat-info {
+    padding: 30px;
+}
+
+.boat-info h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.boat-specs {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.boat-specs li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 10px;
+}
+
+/* Слайдер */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(6,11,20,0.6);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Цены и Отзывы */
+.prices-section {
+    background-color: #0b111e;
+}
+
+.prices-container {
+    display: flex;
+    gap: 50px;
+}
+
+.prices-block, .reviews-block {
+    flex: 1;
+}
+
+.block-title {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.block-title span {
+    color: #d4af37;
+    font-size: 14px;
+}
+
+.price-list {
+    list-style: none;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.dots {
+    flex-grow: 1;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    margin: 0 15px;
+    position: relative;
+    top: 5px;
+}
+
+.price-val {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.price-notice {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 25px;
+}
+
+/* Отзывы */
+.review-item {
+    background-color: #060b14;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.review-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-avatar {
+    font-size: 24px;
+}
+
+.review-header h4 {
+    font-size: 14px;
+}
+
+.stars {
+    color: #d4af37;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.review-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6,11,20,0.8);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #0b111e;
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 40px 30px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #060b14;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    width: 100%;
+}
+
+/* Кнопка Наверх */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #d4af37;
+    color: #060b14;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 4px;
+    cursor: poin* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
