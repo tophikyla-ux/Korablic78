@@ -3,23 +3,19 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 html{
 scroll-behavior:smooth;
 }
-
 body{
 background:#07111B;
 font-family:'Inter',sans-serif;
 color:white;
 overflow-x:hidden;
 }
-
 img{
 display:block;
 width:100%;
 }
-
 .header{
 position:fixed;
 top:0;
@@ -32,30 +28,25 @@ align-items:center;
 z-index:1000;
 background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent);
 }
-
 .logo{
 font-family:'Cinzel',serif;
 font-size:30px;
 letter-spacing:2px;
 color:#D4B06A;
 }
-
 nav{
 display:flex;
 gap:40px;
 }
-
 nav a{
 text-decoration:none;
 color:white;
 font-size:15px;
 transition:.3s;
 }
-
 nav a:hover{
 color:#D4B06A;
 }
-
 .hero{
 position:relative;
 height:100vh;
@@ -66,7 +57,6 @@ display:flex;
 align-items:center;
 padding:0 8%;
 }
-
 .hero-overlay{
 position:absolute;
 inset:0;
@@ -74,7 +64,6 @@ background:
 linear-gradient(to right,rgba(0,0,0,.78),rgba(0,0,0,.2)),
 linear-gradient(to top,rgba(0,0,0,.6),transparent);
 }
-
 .hero-content{
 position:relative;
 z-index:2;
@@ -84,19 +73,16 @@ flex-direction:column;
 justify-content:space-between;
 height:80vh;
 }
-
 .hero-left{
 max-width:720px;
 margin-top:120px;
 }
-
 .premium{
 letter-spacing:4px;
 font-size:14px;
 color:#D4B06A;
 margin-bottom:20px;
 }
-
 .hero h1{
 font-family:'Cinzel',serif;
 font-size:78px;
@@ -104,7 +90,6 @@ line-height:1.05;
 margin-bottom:28px;
 font-weight:700;
 }
-
 .subtitle{
 font-size:22px;
 color:#ddd;
@@ -112,13 +97,11 @@ line-height:1.7;
 margin-bottom:40px;
 max-width:600px;
 }
-
 .hero-buttons{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
 }
-
 .gold-btn,
 .glass-btn{
 padding:17px 36px;
@@ -133,30 +116,25 @@ display:inline-flex;
 align-items:center;
 justify-content:center;
 }
-
 .gold-btn{
 background:#D4B06A;
 color:#07111B;
 box-shadow:0 10px 30px rgba(212,176,106,.25);
 }
-
 .gold-btn:hover{
 transform:translateY(-4px);
 box-shadow:0 18px 45px rgba(212,176,106,.35);
 }
-
 .glass-btn{
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(12px);
 border:1px solid rgba(255,255,255,.15);
 color:white;
 }
-
 .glass-btn:hover{
 background:rgba(255,255,255,.15);
 transform:translateY(-4px);
 }
-
 .hero-bottom{
 display:flex;
 gap:60px;
@@ -168,7 +146,6 @@ border:1px solid rgba(255,255,255,.12);
 border-radius:30px;
 margin-bottom:40px;
 }
-
 .hero-bottom span{
 font-size:13px;
 letter-spacing:2px;
@@ -177,16 +154,13 @@ display:block;
 margin-bottom:8px;
 text-transform:uppercase;
 }
-
 .hero-bottom p{
 font-size:18px;
 color:white;
 }
-
 section{
 padding:120px 8%;
 }
-
 h2{
 font-family:'Cinzel',serif;
 font-size:58px;
@@ -194,17 +168,14 @@ margin-bottom:70px;
 text-align:center;
 color:#D4B06A;
 }
-
 .features{
 background:#08131F;
 }
-
 .features-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:28px;
 }
-
 .feature-card{
 background:#0D2236;
 padding:40px;
@@ -212,34 +183,28 @@ border-radius:30px;
 border:1px solid rgba(212,176,106,.12);
 transition:.4s;
 }
-
 .feature-card:hover{
 transform:translateY(-10px);
 border-color:#D4B06A;
 box-shadow:0 25px 60px rgba(0,0,0,.4);
 }
-
 .feature-card h3{
 font-size:26px;
 margin-bottom:18px;
 color:#D4B06A;
 }
-
 .feature-card p{
 color:#cfcfcf;
 line-height:1.8;
 }
-
 .boats{
 background:#07111B;
 }
-
 .boats-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
 gap:40px;
 }
-
 .boat-card{
 background:#0D2236;
 border-radius:35px;
@@ -247,85 +212,70 @@ overflow:hidden;
 border:1px solid rgba(212,176,106,.1);
 transition:.4s;
 }
-
 .boat-card:hover{
 transform:translateY(-12px);
 box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
-
 .boat-card img{
 height:400px;
 object-fit:cover;
 }
-
 .boat-content{
 padding:40px;
 }
-
 .boat-content h3{
 font-size:34px;
 margin-bottom:22px;
 font-family:'Cinzel',serif;
 color:#D4B06A;
 }
-
 .boat-content p{
 line-height:1.9;
 color:#ddd;
 margin-bottom:28px;
 }
-
 .boat-content ul{
 list-style:none;
 margin-bottom:35px;
 }
-
 .boat-content li{
 margin-bottom:14px;
 color:#ccc;
 position:relative;
 padding-left:24px;
 }
-
 .boat-content li::before{
 content:'•';
 position:absolute;
 left:0;
 color:#D4B06A;
 }
-
 .gallery{
 background:#08131F;
 }
-
 .gallery-grid{
   display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:24px;
 }
-
 .gallery-grid img{
 height:380px;
 object-fit:cover;
 border-radius:28px;
 transition:.4s;
 }
-
 .gallery-grid img:hover{
 transform:scale(1.03);
 }
-
 .contacts{
 text-align:center;
 background:#07111B;
 }
-
 .contacts p{
 font-size:24px;
 margin-bottom:22px;
 color:#ddd;
 }
-
 .modal{
 display:none;
 position:fixed;
@@ -336,7 +286,6 @@ justify-content:center;
 align-items:center;
 padding:20px;
 }
-
 .modal-content{
 background:#0D2236;
 width:100%;
@@ -347,12 +296,10 @@ position:relative;
 border:1px solid rgba(212,176,106,.15);
 box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
-
 .modal-content h2{
 margin-bottom:40px;
 font-size:42px;
 }
-
 .close{
 position:absolute;
 right:25px;
@@ -361,7 +308,6 @@ font-size:42px;
 cursor:pointer;
 color:#D4B06A;
 }
-
 .price-item{
 display:flex;
 justify-content:space-between;
@@ -370,115 +316,86 @@ padding:22px 0;
 border-bottom:1px solid rgba(255,255,255,.08);
 gap:20px;
 }
-
 .price-item span{
 color:#ddd;
 font-size:17px;
 }
-
 .price-item strong{
 color:#D4B06A;
 font-size:24px;
 }
-
 @media(max-width:1100px){
-
 .hero h1{
 font-size:60px;
 }
-
 .hero-bottom{
 gap:35px;
 padding:25px 30px;
 }
-
 }
-
 @media(max-width:850px){
-
 .header{
 padding:25px 25px;
 }
-
 nav{
 display:none;
 }
-
 .hero{
 padding:0 25px;
 }
-
 .hero h1{
 font-size:48px;
 }
-
 .subtitle{
 font-size:18px;
 }
-
 .hero-bottom{
 flex-direction:column;
 gap:18px;
 width:100%;
 }
-
 h2{
 font-size:42px;
 }
-
 .boats-grid{
 grid-template-columns:1fr;
 }
-
 .boat-card img{
 height:320px;
 }
-
 .gallery-grid{
 grid-template-columns:1fr;
 }
-
 .gallery-grid img{
 height:300px;
 }
-
 }
-
 @media(max-width:600px){
-
 .hero h1{
 font-size:38px;
 }
-
 .hero-buttons{
 flex-direction:column;
 }
-
 .gold-btn,
 .glass-btn{
 width:100%;
 }
-
 section{
 padding:90px 25px;
 }
-
 h2{
 font-size:34px;
 margin-bottom:45px;
 }
-
 .modal-content{
 padding:35px 25px;
 }
-
 .price-item{
 flex-direction:column;
 align-items:flex-start;
 }
-
 .contacts p{
 font-size:18px;
 }
-
 }
