@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КОРАБЛИК78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
     <style>
-        /* Премиум палитра с картинки-референса */
         :root {
-            --bg-dark: #070B11;      /* Глубокий черный/темно-синий фон */
-            --bg-card: #0F1622;      /* Чуть более светлый тон для карточек */
-            --accent-gold: #C5A059;  /* Благородное золото для рамок, линий и кнопок */
-            --text-white: #E5E9F0;   /* Белый текст */
-            --text-gray: #7E8B9B;    /* Серый текст для описаний */
+            --bg-dark: #070B11;      
+            --bg-card: #0F1622;      
+            --accent-gold: #C5A059;  
+            --text-white: #E5E9F0;   
+            --text-gray: #7E8B9B;    
             --border-gold: rgba(197, 160, 89, 0.3);
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Times New Roman', Times, serif; /* Традиционный премиум-шрифт */
+            font-family: 'Times New Roman', Times, serif; 
         }
 
         body {
@@ -33,7 +33,6 @@
             padding: 0 20px;
         }
 
-        /* НАВИГАЦИЯ (ШАПКА) */
         header {
             display: flex;
             justify-content: space-between;
@@ -83,7 +82,6 @@
             letter-spacing: 1px;
         }
 
-        /* ГЛАВНЫЙ ЭКРАН */
         .hero-section {
             position: relative;
             height: 75vh;
@@ -93,7 +91,6 @@
             overflow: hidden;
         }
 
-        /* Слой для вашей фоновой фотографии */
         .hero-bg-user {
             position: absolute;
             top: 0;
@@ -101,7 +98,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background-color: #151d2a; /* Цвет-заглушка */
+            background-color: #151d2a; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,7 +107,6 @@
             letter-spacing: 2px;
         }
 
-        /* Затемнение поверх фото, чтобы текст читался */
         .hero-section::after {
             content: '';
             position: absolute;
@@ -172,7 +168,6 @@
             letter-spacing: 1px;
         }
 
-        /* ПРЕИМУЩЕСТВА (4 ПЛАШКИ) */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -202,7 +197,6 @@
             color: var(--text-gray);
         }
 
-        /* ЗАГОЛОВКИ СЕКЦИЙ */
         .section-title {
             text-align: center;
             font-size: 22px;
@@ -213,7 +207,6 @@
             position: relative;
         }
 
-        /* ПОПУЛЯРНЫЕ МАРШРУТЫ (СЕТКА 4 КАРТОЧКИ) */
         .routes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -274,7 +267,6 @@
             margin-top: auto;
         }
 
-        /* НАШИ КАТЕРА (2 БОЛЬШИЕ КОЛОНКИ) */
         .boats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -335,7 +327,6 @@
             width: 15px;
         }
 
-        /* ГАЛЕРЕЯ (ГОРИЗОНТАЛЬНАЯ ЛЕНТА ФОТО) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -353,7 +344,6 @@
             text-transform: uppercase;
         }
 
-        /* БЛОК ЦЕНЫ И ОТЗЫВЫ (ДВЕ КОЛОНКИ СНИЗУ) */
         .two-columns {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -409,7 +399,6 @@
             letter-spacing: 1px;
         }
 
-        /* ПОДВАЛ С КОНТАКТАМИ И КАРТОЙ */
         footer {
             border-top: 1px solid var(--border-gold);
             margin-top: 80px;
@@ -443,20 +432,14 @@
             width: 100px;
         }
 
-        .map-placeholder {
+        .map-container {
             width: 100%;
-            height: 200px;
-            background-color: #1b2432;
+            height: 250px;
             border: 1px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-gray);
-            font-size: 12px;
-            text-transform: uppercase;
+            border-radius: 4px;
+            overflow: hidden;
         }
 
-        /* АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ */
         @media (max-width: 900px) {
             nav, .header-btn { display: none; }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -499,7 +482,6 @@
 
     <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero-section">
-        <!-- ТУТ ВАШЕ ФОНОЕ ФОТО (Вставьте ссылку в src="ссылка" вместо заглушки) -->
         <div class="hero-bg-user">[ ТУТ БУДЕТ ВАШЕ БОЛЬШОЕ ФОНОЕ ФОТО КАТЕРА ]</div>
         
         <div class="container" style="width: 100%;">
@@ -508,7 +490,7 @@
                 <p>ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
                 <p class="hero-subtext">Развод мостов • Закаты • Индивидуальные маршруты<br>До 7 гостей на борту</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me" class="btn-fill" target="_blank">Забронировать</a>
+                    <a href="https://wa.me" class="btn-fill" target="_blank">WhatsApp</a>
                     <a href="https://t.me" class="btn-border" target="_blank">Telegram</a>
                 </div>
             </div>
@@ -541,7 +523,6 @@
     <section class="container">
         <h2 class="section-title">Популярные маршруты</h2>
         <div class="routes-grid">
-            <!-- Карточка 1 -->
             <div class="route-card">
                 <div class="img-placeholder">[ ФОТО: РАЗВОД МОСТОВ ]</div>
                 <div class="route-info">
@@ -550,7 +531,6 @@
                     <a href="https://wa.me" class="more-link" target="_blank">Подробнее →</a>
                 </div>
             </div>
-            <!-- Карточка 2 -->
             <div class="route-card">
                 <div class="img-placeholder">[ ФОТО: РЕКИ И КАНАЛЫ ]</div>
                 <div class="route-info">
@@ -559,7 +539,6 @@
                     <a href="https://wa.me" class="more-link" target="_blank">Подробнее →</a>
                 </div>
             </div>
-            <!-- Карточка 3 -->
             <div class="route-card">
                 <div class="img-placeholder">[ ФОТО: ЗАКАТ НА ВОДЕ ]</div>
                 <div class="route-info">
@@ -568,7 +547,6 @@
                     <a href="https://wa.me" class="more-link" target="_blank">Подробнее →</a>
                 </div>
             </div>
-            <!-- Карточка 4 -->
             <div class="route-card">
                 <div class="img-placeholder">[ ФОТО: ИНДИВИДУАЛЬНЫЙ ]</div>
                 <div class="route-info">
@@ -584,7 +562,6 @@
     <section class="container">
         <h2 class="section-title">Наши катера</h2>
         <div class="boats-grid">
-            <!-- Катер 1 -->
             <div class="boat-card">
                 <div class="boat-img-placeholder">[ ФОТО КАТЕРА PREMIUM ]</div>
                 <div class="boat-info">
@@ -597,7 +574,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- Катер 2 -->
             <div class="boat-card">
                 <div class="boat-img-placeholder">[ ФОТО КАТЕРА CLASSIC ]</div>
                 <div class="boat-info">
@@ -649,19 +625,21 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ -->
+    <!-- ПОДВАЛ С ИНТЕРАКТИВНОЙ КАРТОЙ -->
     <footer class="container">
         <div class="footer-grid">
             <div class="contacts-info">
                 <h3>Контакты</h3>
-                <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-                <p><strong>Причал:</strong> наб. канала Грибоедова, 72</p>
-                <p><strong>Telegram:</strong> @your_username</p>
-                <p><strong>WhatsApp:</strong> +7 (999) 123-45-67</p>
+                <p><strong>Телефон:</strong> +7 (960) 582-84-19</p>
+                <p><strong>Причал:</strong> Санкт-Петербург (Координаты: 59.926216, 30.310774)</p>
+                <p><strong>Telegram:</strong> @korablik_78</p>
+                <p><strong>WhatsApp:</strong> +7 (960) 582-84-19</p>
                 <p><strong>Режим:</strong> Ежедневно с 10:00 до 02:00</p>
             </div>
-            <!-- Сюда вы вставите свою картинку карты -->
-            <div class="map-placeholder">[ ТУТ БУДЕТ ВАШ СКРИНШОТ КАРТЫ ]</div>
+            <div class="map-container">
+                <!-- Интерактивный виджет Яндекс Карт по вашим координатам -->
+                <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);"></iframe>
+            </div>
         </div>
     </footer>
 
