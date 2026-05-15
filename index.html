@@ -1,184 +1,255 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кораблик78 — прогулки по Петербургу</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОРАБЛИК78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
+    <style>
+        :root {
+            --bg-color: #0b111e;
+            --card-bg: #131c2e;
+            --accent-gold: #d4af37;
+            --text-white: #ffffff;
+            --text-gray: #a0aec0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e2d4a;
+            padding-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(11,17,30,0.8), rgba(11,17,30,0.9)), url('https://unsplash.com') center/cover;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+        .hero p {
+            color: var(--accent-gold);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .btn-tg {
+            background-color: #24A1DE;
+            color: white;
+        }
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--accent-gold);
+            margin-top: 50px;
+            font-size: 28px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #1e2d4a;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 18px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        .price-list {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #1e2d4a;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e2d4a;
+        }
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .review-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        .author {
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .map-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .map-box img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--accent-gold);
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 1px solid #1e2d4a;
+            color: var(--text-gray);
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="logo">КОРАБЛИК78</div>
-  <nav>
-    <a href="#boats">Катера</a>
-    <a href="#gallery">Галерея</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
+<div class="container">
+    <header>
+        <div class="logo">КОРАБЛИК78</div>
+        <div>
+            <!-- ЗАМЕНИТЕ НА СВОИ КОНТАКТЫ -->
+            <a href="https://wa.me" class="btn btn-wa" target="_blank">WhatsApp</a>
+            <a href="https://t.me" class="btn btn-tg" target="_blank">Telegram</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ</h1>
+        <p>САНКТ-ПЕТЕРБУРГА • ДО 7 ГОСТЕЙ НА БОРТУ</p>
+        <a href="https://wa.me" class="btn" target="_blank">ЗАБРОНИРОВАТЬ</a>
+    </section>
+
+    <h2 class="section-title">Популярные маршруты</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://unsplash.com" alt="Развод мостов">
+            <div class="card-content">
+                <div class="card-title">Развод мостов</div>
+                <p style="color: var(--text-gray);">Ночной круиз по Неве в самом сердце города.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://unsplash.com" alt="Реки и каналы">
+            <div class="card-content">
+                <div class="card-title">Реки и каналы</div>
+                <p style="color: var(--text-gray);">Атмосферная прогулка по историческому центру.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://unsplash.com" alt="Закат на воде">
+            <div class="card-content">
+                <div class="card-title">Закат на воде</div>
+                <p style="color: var(--text-gray);">Золотой час Петербурга с лучших ракурсов.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Наши катера</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title">Катер Premium</div>
+                <p style="color: var(--text-gray);">• До 7 гостей<br>• Мягкие диваны<br>• Музыка и подсветка<br>• Тент от дождя</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title">Катер Classic</div>
+                <p style="color: var(--text-gray);">• До 7 гостей<br>• Уютная атмосфера<br>• Идеален для фотосессий<br>• Прогулки на катере</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Цены</h2>
+    <div class="price-list">
+        <div class="price-item"><span>Реки и каналы (1 час)</span><span style="color:var(--accent-gold);">от 7 000 ₽</span></div>
+        <div class="price-item"><span>Развод мостов (2 часа)</span><span style="color:var(--accent-gold);">от 12 000 ₽</span></div>
+        <div class="price-item"><span>Закат на катере (1.5 часа)</span><span style="color:var(--accent-gold);">от 9 000 ₽</span></div>
+    </div>
+
+    <h2 class="section-title">Отзывы</h2>
+    <div class="reviews">
+        <div class="review-card">
+            <p>«Прекрасная прогулка на закате, очень романтично. Обязательно вернемся ещё раз!»</p>
+            <div class="author">Мария ★★★★★</div>
+        </div>
+        <div class="review-card">
+            <p>«Брали прогулку на развод мостов — это были лучшие впечатления от поездки. Спасибо!»</p>
+            <div class="author">Игорь ★★★★★</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Где нас найти</h2>
+    <div class="map-box">
+        <!-- Клик по картинке откроет Яндекс Карты -->
+        <a href="https://yandex.ru" target="_blank">
+            <img src="https://unsplash.com" alt="Карта причала">
+            <p style="color: var(--accent-gold); margin-top:10px;">Нажмите, чтобы открыть карту</p>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2026 КОРАБЛИК78. Все права защищены.</p>
+    </footer>
 </div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <div class="hero-left">
-      <div class="premium">PRIVATE BOAT EXPERIENCE</div>
-
-      <h1>Прогулки по рекам и каналам Санкт-Петербурга</h1>
-
-      <div class="subtitle">
-        Развод мостов • Ночной город • Финский залив • Индивидуальные маршруты до 7 человек
-      </div>
-
-      <div class="hero-buttons">
-        <a class="gold-btn" href="https://t.me/korablik_78">Забронировать</a>
-        <a class="glass-btn" href="tel:+79605828419">Позвонить</a>
-      </div>
-    </div>
-
-    <div class="hero-bottom">
-      <div>
-        <span>Катера</span>
-        <p>2 премиальных судна</p>
-      </div>
-      <div>
-        <span>Вместимость</span>
-        <p>до 7 гостей</p>
-      </div>
-      <div>
-        <span>Маршруты</span>
-        <p>центр + залив</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features">
-  <h2>Почему нас выбирают</h2>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Приватность</h3>
-      <p>Только ваша компания, без посторонних людей.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Развод мостов</h3>
-      <p>Лучшие виды ночного Петербурга с воды.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Комфорт</h3>
-      <p>Пледы, уют, спокойная атмосфера на борту.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Маршруты</h3>
-      <p>Центр города, Невa, Финский залив.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BOATS -->
-<section id="boats" class="boats">
-  <h2>Наши катера</h2>
-
-  <div class="boats-grid">
-
-    <div class="boat-card">
-      <img src="images/white.jpg">
-      <div class="boat-content">
-        <h3>WHITE PREMIUM</h3>
-        <p>Премиальный белый катер для комфортных прогулок.</p>
-
-        <ul>
-          <li>До 7 гостей</li>
-          <li>Пледы и комфорт</li>
-          <li>Туалет на борту</li>
-        </ul>
-
-        <button class="gold-btn" onclick="openModal('whiteModal')">Прайс</button>
-      </div>
-    </div>
-
-    <div class="boat-card">
-      <img src="images/turquoise.jpg">
-      <div class="boat-content">
-        <h3>CLASSIC TURQUOISE</h3>
-        <p>Стильный катер для прогулок по каналам и Неве.</p>
-
-        <ul>
-          <li>До 7 гостей</li>
-          <li>Пледы</li>
-          <li>Комфортная посадка</li>
-        </ul>
-
-        <button class="gold-btn" onclick="openModal('blueModal')">Прайс</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="gallery">
-  <h2>Галерея</h2>
-
-  <div class="gallery-grid">
-    <img src="images/g1.jpg">
-    <img src="images/g2.jpg">
-    <img src="images/g3.jpg">
-    <img src="images/g4.jpg">
-  </div>
-</section>
-
-<!-- CONTACTS -->
-<section id="contacts" class="contacts">
-  <h2>Контакты</h2>
-
-  <p>📞 +7 960 582-84-19</p>
-  <p>✈️ @korablik_78</p>
-  <p>💬 WhatsApp: +7 960 582-84-19</p>
-</section>
-
-<!-- MODAL WHITE -->
-<div id="whiteModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('whiteModal')">&times;</span>
-
-    <h2>WHITE PREMIUM</h2>
-
-    <div class="price-item"><span>30 мин</span><strong>2 990 ₽</strong></div>
-    <div class="price-item"><span>1 час</span><strong>5 990 ₽</strong></div>
-    <div class="price-item"><span>2 часа</span><strong>11 990 ₽</strong></div>
-    <div class="price-item"><span>Развод мостов</span><strong>12 000 ₽</strong></div>
-
-  </div>
-</div>
-
-<!-- MODAL BLUE -->
-<div id="blueModal" class="modal">
-    <div class="modal-content">
-    <span class="close" onclick="closeModal('blueModal')">&times;</span>
-
-    <h2>CLASSIC TURQUOISE</h2>
-
-    <div class="price-item"><span>30 мин</span><strong>2 490 ₽</strong></div>
-    <div class="price-item"><span>1 час</span><strong>4 990 ₽</strong></div>
-    <div class="price-item"><span>2 часа</span><strong>9 990 ₽</strong></div>
-
-  </div>
-</div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
