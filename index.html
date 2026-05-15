@@ -1,741 +1,141 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КОРАБЛИК78 — Прогулки по рекам и каналам Санкт-Петербурга</title>
-    <style>
-        :root {
-            --bg-dark: #070B11;      
-            --bg-card: #0F1622;      
-            --accent-gold: #C5A059;  
-            --text-white: #E5E9F0;   
-            --text-gray: #7E8B9B;    
-            --border-gold: rgba(197, 160, 89, 0.3);
-        }
-
-        html {
-            scroll-behavior: smooth; 
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Times New Roman', Times, serif; 
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ФИКСИРОВАННАЯ ШАПКА */
-        .header-wrapper {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(7, 11, 17, 0.85); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            z-index: 1000; 
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo-area {
-            text-align: left;
-            text-decoration: none; 
-            display: block;
-        }
-
-        .logo-title {
-            font-size: 22px;
-            color: var(--accent-gold);
-            letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        .logo-sub {
-            font-size: 10px;
-            color: var(--text-gray);
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: var(--text-white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-gold);
-        }
-
-        .header-btn {
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            padding: 8px 18px;
-            text-decoration: none;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-
-        /* ГЛАВНЫЙ ЭКРАН */
-        .hero-section {
-            position: relative;
-            height: 85vh; 
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--border-gold);
-            overflow: hidden;
-            margin-top: 75px; 
-        }
-
-        .hero-bg-user, .img-placeholder, .boat-img-placeholder, .gallery-placeholder {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: none;
-        }
-
-        .hero-bg-user {
-            position: absolute;
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            z-index: 1;
-            background-image: linear-gradient(90deg, rgba(7,11,17,0.95) 35%, rgba(7,11,17,0.35) 100%), url('images/hero-main.jpg');
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
-            color: var(--accent-gold);
-            letter-spacing: 3px;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .hero-content p {
-            font-size: 16px;
-            color: var(--text-white);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .hero-subtext {
-            font-size: 13px;
-            color: var(--text-gray) !important;
-            margin-bottom: 30px !important;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-fill {
-            background-color: var(--accent-gold);
-            color: #000;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-
-        .btn-border {
-            border: 1px solid var(--text-white);
-            color: var(--text-white);
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-
-        /* КРАСИВЫЙ СИЛУЭТ ЯКОРЯ */
-        .scroll-down-anchor {
-            position: absolute;
-            bottom: 35px;
-            left: 20px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--accent-gold);
-            animation: pulse-anchor 2s infinite ease-in-out;
-            cursor: pointer;
-        }
-
-        .scroll-down-anchor svg {
-            width: 24px;
-            height: 24px;
-            fill: none;
-            stroke: var(--accent-gold);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .scroll-down-text {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        @keyframes pulse-anchor {
-            0% { transform: translateY(0); opacity: 0.7; }
-            50% { transform: translateY(-6px); opacity: 1; }
-            100% { transform: translateY(0); opacity: 0.7; }
-        }
-
-        /* ПРЕИМУЩЕСТВА */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-bottom: 1px solid var(--border-gold);
-        }
-
-        .feature-box {
-            padding: 30px 20px;
-            text-align: center;
-            border-right: 1px solid rgba(197, 160, 89, 0.15);
-        }
-
-        .feature-box:last-child {
-            border-right: none;
-        }
-
-        .feature-box h3 {
-            font-size: 13px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .feature-box p {
-            font-size: 12px;
-            color: var(--text-gray);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 22px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin: 0;
-            padding: 60px 0 40px 0;
-            position: relative;
-        }
-
-        /* МАРШРУТЫ */
-        .routes-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .route-card {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .img-placeholder {
-            width: 100%;
-            height: 240px;
-        }
-
-        .route-bridges { background-image: url('images/routes-bridges.jpg'); }
-        .route-canals { background-image: url('images/routes-canals.jpg'); }
-        .route-sunset { background-image: url('images/routes-sunset.jpg'); }
-        .route-custom { background-image: url('images/routes-custom.jpg'); }
-
-        .route-info {
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .route-info h4 {
-            font-size: 16px;
-            color: var(--text-white);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .route-info p {
-            font-size: 12px;
-            color: var(--text-gray);
-            margin-bottom: 15px;
-        }
-
-        .more-link {
-            font-size: 11px;
-            color: var(--accent-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: auto;
-            cursor: pointer;
-        }
-
-        /* КАТЕРА */
-        .boats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .boat-card {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            overflow: hidden;
-        }
-
-        .boat-img-placeholder {
-            width: 45%;
-            min-height: 320px;
-        }
-
-        .boat-premium { background-image: url('images/boat-premium.jpg'); }
-        .boat-classic { background-image: url('images/boat-classic.jpg'); }
-
-        .boat-info {
-            width: 55%;
-            padding: 25px;
-        }
-
-        .boat-info h4 {
-            font-size: 18px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 10px;
-        }
-
-        .boat-info ul {
-            list-style: none;
-        }
-
-        .boat-info ul li {
-            font-size: 13px;
-            color: var(--text-white);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .boat-info ul li::before {
-            content: "•";
-            color: var(--accent-gold);
-            font-weight: bold;
-            display: inline-block;
-            width: 15px;
-        }
-
-        /* ГАЛЕРЕЯ */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .gallery-placeholder {
-            height: 180px;
-        }
-
-        .gallery-1 { background-image: url('images/gallery-1.jpg'); }
-        .gallery-2 { background-image: url('images/gallery-2.jpg'); }
-        .gallery-3 { background-image: url('images/gallery-3.jpg'); }
-        .gallery-4 { background-image: url('images/gallery-4.jpg'); }
-
-        /* ЦЕНЫ И ОТЗЫВЫ */
-        .two-columns {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
-            margin-top: 40px;
-            padding-top: 20px;
-        }
-
-        .price-list {
-            width: 100%;
-        }
-
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 14px;
-        }
-
-        .price-name {
-            color: var(--text-white);
-        }
-
-        .price-value {
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        .price-note {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin-top: 15px;
-        }
-
-        .review-box {
-            background-color: var(--bg-card);
-            padding: 25px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 15px;
-        }
-
-        .review-text {
-            font-style: italic;
-            font-size: 13px;
-            color: var(--text-white);
-            margin-bottom: 15px;
-        }
-
-        .review-author {
-            font-size: 12px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ПОДВАЛ */
-        footer {
-            border-top: 1px solid var(--border-gold);
-            margin-top: 80px;
-            padding: 40px 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contacts-info h3 {
-            color: var(--accent-gold);
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .contacts-info p {
-            font-size: 14px;
-            margin-bottom: 12px;
-            color: var(--text-white);
-        }
-
-        .contacts-info p strong {
-            color: var(--text-gray);
-            font-weight: normal;
-            display: inline-block;
-            width: 100px;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 280px;
-            border: 1px solid var(--accent-gold);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        #features-block, #routes, #boats, #gallery, #prices, #contacts {
-            scroll-margin-top: 90px;
-        }
-
-        @media (max-width: 900px) {
-            nav, .header-btn { display: none; }
-            .hero-section { margin-top: 65px; }
-            .scroll-down-anchor { left: 10px; bottom: 20px; }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .routes-grid { grid-template-columns: repeat(2, 1fr); }
-            .boats-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .two-columns { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 500px) {
-            .features-grid { grid-template-columns: 1fr; }
-            .routes-grid { grid-template-columns: 1fr; }
-            .boat-card { flex-direction: column; }
-            .boat-img-placeholder { width: 100%; height: 220px; }
-            .boat-info { width: 100%; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КОРАБЛИК78</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #070B11;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #C5A059;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #ccc;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-wa { background: #25D366; color: white; }
+.btn-tg { background: #229ED9; color: white; }
+
+/* SCROLL ANCHOR */
+.scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #C5A059;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+.scroll svg {
+    width: 30px;
+    height: 30px;
+    stroke: #C5A059;
+    fill: none;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translate(-50%,0); }
+    50% { transform: translate(-50%,-10px); }
+}
+
+/* SECTION */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+</style>
 </head>
+
 <body>
 
-    <div id="main-top"></div>
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>КОРАБЛИК78</h1>
+        <p>Прогулки по рекам и каналам Санкт-Петербурга</p>
 
-    <!-- ФИКСИРОВАННАЯ ШАПКА -->
-    <div class="header-wrapper">
-        <div class="container">
-            <header>
-                <a href="#main-top" class="logo-area">
-                    <div class="logo-title">КОРАБЛИК78</div>
-                    <div class="logo-sub">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ</div>
-                </a>
-                <nav>
-                    <a href="#main-top">Главная</a>
-                    <a href="#routes">Маршруты</a>
-                    <a href="#boats">Катера</a>
-                    <a href="#gallery">Галерея</a>
-                    <a href="#prices">Цены</a>
-                    <a href="#contacts">Контакты</a>
-                </nav>
-                <a onclick="openWA()" class="header-btn">Забронировать</a>
-            </header>
+        <div>
+            <a class="btn btn-wa" onclick="openWA()">WhatsApp</a>
+            <a class="btn btn-tg" onclick="openTG()">Telegram</a>
         </div>
     </div>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
-    <section class="hero-section">
-        <div class="hero-bg-user"></div>
-        
-        <div class="container" style="width: 100%; position: relative; height: 100%;">
-            <div class="hero-content" style="padding-top: 80px;">
-                <h1>КОРАБЛИК78</h1>
-                <p>ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
-                <p class="hero-subtext">Развод мостов • Закаты • Индивидуальные маршруты<br>До 7 гостей на борту</p>
-                <div class="hero-buttons">
-                    <a onclick="openWA()" class="btn-fill">WhatsApp</a>
-                    <a onclick="openTG()" class="btn-border">Telegram</a>
-                </div>
-            </div>
+    <!-- ЯКОРЬ -->
+    <a class="scroll" href="#next">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 5v14"></path>
+            <path d="M6 13l6 6 6-6"></path>
+        </svg>
+        <div>Листай вниз</div>
+    </a>
+</div>
 
-            <!-- ИДЕАЛЬНЫЙ СИЛУЭТ ЯКОРЯ -->
-            <a href="#features-block" class="scroll-down-anchor">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="5" r="1.5"/>
-                    <path d="M12 6.5v10.5m-3.5-3.5h7M5 13a7 7 0 0 0 14 0m-1.5 0h1.5M5 13h1.5"/>
-                </svg>
-                <span class="scroll-down-text">Листай вниз</span>
-            </a>
-        </div>
-    </section>
+<!-- CONTENT -->
+<section id="next">
+    <h2 style="color:#C5A059;">О нас</h2>
+    <p>Прогулки по Неве, развод мостов и закаты.</p>
+</section>
 
-    <!-- ПРЕИМУЩЕСТВА -->
-    <div class="container" id="features-block">
-        <div class="features-grid">
-            <div class="feature-box">
-                <h3>Приватные прогулки</h3>
-                <p>Только ваша компания без посторонних</p>
-            </div>
-            <div class="feature-box">
-                <h3>Развод мостов с воды</h3>
-                <p>Лучший вид на ночной Петербург</p>
-            </div>
-            <div class="feature-box">
-                <h3>Центр города</h3>
-                <p>Удобный причал в самом сердце города</p>
-            </div>
-            <div class="feature-box">
-                <h3>Атмосфера Premium</h3>
-                <p>Комфортные катера до 7 гостей</p>
-            </div>
-        </div>
-    </div>
+<script>
+const BOT_TOKEN = "8725881170:AAGYzgflcBn0yTL-ETrzza44Etb0m8wgWjg";
+const CHAT_ID = "8725881170";
 
-    <!-- ПОПУЛЯРНЫЕ МАРШРУТЫ -->
-    <section class="container" id="routes">
-        <h2 class="section-title">Популярные маршруты</h2>
-        <div class="routes-grid">
-            <div class="route-card">
-                <div class="img-placeholder route-bridges"></div>
-                <div class="route-info">
-                    <h4>Развод мостов</h4>
-                    <p>Ночной маршрут по Неве и главным мостам города.</p>
-                    <a onclick="openWA()" class="more-link">Подробнее →</a>
-                </div>
-            </div>
-            <div class="route-card">
-                <div class="img-placeholder route-canals"></div>
-                <div class="route-info">
-                    <h4>Реки и каналы</h4>
-                    <p>Атмосферная прогулка по историческому центру.</p>
-                    <a onclick="openWA()" class="more-link">Подробнее →</a>
-                </div>
-            </div>
-            <div class="route-card">
-                <div class="img-placeholder route-sunset"></div>
-                <div class="route-info">
-                    <h4>Закат на воде</h4>
-                    <p>Золотой час Петербурга с лучших ракурсов.</p>
-                    <a onclick="openWA()" class="more-link">Подробнее →</a>
-                </div>
-            </div>
-            <div class="route-card">
-                <div class="img-placeholder route-custom"></div>
-                <div class="route-info">
-                    <h4>Свой маршрут</h4>
-                    <p>Подберем прогулку под ваше настроение.</p>
-                    <a onclick="openWA()" class="more-link">Подробнее →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+function sendTelegram(text) {
+    fetch(https://api.telegram.org/bot${BOT_TOKEN}/sendMessage, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    });
+}
 
-    <!-- НАШИ КАТЕРА -->
-    <section class="container" id="boats">
-        <h2 class="section-title">Наши катера</h2>
-        <div class="boats-grid">
-            <div class="boat-card">
-                <div class="boat-img-placeholder boat-premium"></div>
-                <div class="boat-info">
-                    <h4>Катер Premium</h4>
-                    <ul>
-                        <li>До 7 гостей</li>
-                        <li>Мягкие диваны</li>
-                        <li>Музыка и подсветка</li>
-                        <li>Тент от дождя и солнца</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="boat-card">
-                <div class="boat-img-placeholder boat-classic"></div>
-                <div class="boat-info">
-                    <h4>Катер Classic</h4>
-                    <ul>
-                        <li>До 7 гостей</li>
-                        <li>Уютная атмосфера</li>
-                        <li>Идеально для прогулок</li>
-                        <li>Отлично для фотосессий</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+function openWA() {
+    sendTelegram("🚤 Заявка с сайта: WhatsApp");
+    window.open("https://wa.me/79605828419", "_blank");
+}
 
-    <!-- ГАЛЕРЕЯ -->
-    <section class="container" id="gallery">
-        <h2 class="section-title">Галерея</h2>
-        <div class="gallery-grid">
-            <div class="gallery-placeholder gallery-1"></div>
-            <div class="gallery-placeholder gallery-2"></div>
-            <div class="gallery-placeholder gallery-3"></div>
-            <div class="gallery-placeholder gallery-4"></div>
-        </div>
-    </section>
-
-    <!-- ЦЕНЫ И ОТЗЫВЫ -->
-    <div class="container" id="prices">
-        <div class="two-columns">
-            <div>
-                <h2 class="section-title" style="text-align: left; padding: 0 0 20px 0;">Цены</h2>
-                <div class="price-list">
-                    <div class="price-row"><span class="price-name">Реки и каналы (1 час)</span><span class="price-value">от 7 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">Развод мостов (2-2.5 часа)</span><span class="price-value">от 12 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">Закат на катере (1.5 часа)</span><span class="price-value">от 9 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">Ночной круиз (3 часа)</span><span class="price-value">от 15 000 ₽</span></div>
-                </div>
-                <div class="price-note">Цены указаны за аренду катера целиком. До 7 гостей.</div>
-            </div>
-            <div>
-                <h2 class="section-title" style="text-align: left; padding: 0 0 20px 0;">Отзывы</h2>
-                <div class="review-box">
-                    <div class="review-text">"Невероятная атмосфера ночного Петербурга. Прекрасный катер и отличный капитан. Рекомендую!"</div>
-                    <div class="review-author">Анна и Андрей ★★★★★</div>
-                </div>
-                <div class="review-box">
-                    <div class="review-text">"Брали прогулку на развод мостов — это было лучшее впечатление поездки. Спасибо!"</div>
-                    <div class="review-author">Игорь ★★★★★</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ПОДВАЛ С КАРТОЙ -->
-    <footer class="container" id="contacts">
-        <div class="footer-grid">
-            <div class="contacts-info">
-                <h3>Контакты</h3>
-                <p><strong>Телефон:</strong> +7 (960) 582-84-19</p>
-                <p><strong>Причал:</strong> Санкт-Петербург (Координаты: 59.926216, 30.310774)</p>
-                <p><strong>Telegram:</strong> @korablik_78</p>
-                <p><strong>WhatsApp:</strong> +7 (960) 582-84-19</p>
-                <p><strong>Режим:</strong> Ежедневно с 10:00 до 02:00</p>
-            </div>
-            <div class="map-container">
-                <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);"></iframe>
-            </div>
-        </div>
-    </footer>
-
-    <!-- СКРИПТ ГАРАНТИРОВАННОГО ПЕРЕНАПРАВЛЕНИЯ -->
-    <script>
-        function openWA() {
-            // Сначала пробуем запустить родное приложение на устройстве
-            window.location.href = "whatsapp://send?phone=79605828419";
-            // Если через полсекунды приложение не открылось (например, на старом ПК), открываем веб-версию
-            setTimeout(function() {
-                window.open("https://whatsapp.com", "_blank");
-            }, 500);
-        }
-
-        function openTG() {
-            // Напрямую открываем канал в родном приложении Telegram без сайтов-прокладок
-            window.location.href = "tg://resolve?domain=korablik_78";
-            // Запасной вариант для браузера
-            setTimeout(function() {
-                window.open("https://t.me", "_blank");
-            }, 500);
-        }
-    </script>
+function openTG() {
+    sendTelegram("🚤 Заявка с сайта: Telegram");
+    window.open("https://t.me/korablik_78", "_blank");
+}
+</script>
 
 </body>
 </html>
