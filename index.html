@@ -98,6 +98,7 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
         }
 
         /* ГЛАВНЫЙ ЭКРАН */
@@ -169,6 +170,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
         }
 
         .btn-border {
@@ -179,9 +181,10 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
         }
 
-        /* АНИМИРОВАННЫЙ ЯКОРЬ */
+        /* КРАСИВЫЙ СИЛУЭТ ЯКОРЯ */
         .scroll-down-anchor {
             position: absolute;
             bottom: 35px;
@@ -315,6 +318,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: auto;
+            cursor: pointer;
         }
 
         /* КАТЕРА */
@@ -534,8 +538,7 @@
                     <a href="#prices">Цены</a>
                     <a href="#contacts">Контакты</a>
                 </nav>
-                <!-- Ссылка WhatsApp в шапке -->
-                <a href="https://whatsapp.com" class="header-btn" target="_blank">Забронировать</a>
+                <a onclick="openWA()" class="header-btn">Забронировать</a>
             </header>
         </div>
     </div>
@@ -550,10 +553,8 @@
                 <p>ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
                 <p class="hero-subtext">Развод мостов • Закаты • Индивидуальные маршруты<br>До 7 гостей на борту</p>
                 <div class="hero-buttons">
-                    <!-- Ссылка WhatsApp по центру -->
-                    <a href="https://whatsapp.com" class="btn-fill" target="_blank">WhatsApp</a>
-                    <!-- Ссылка Telegram по центру -->
-                    <a href="https://tglink.ru" class="btn-border" target="_blank">Telegram</a>
+                    <a onclick="openWA()" class="btn-fill">WhatsApp</a>
+                    <a onclick="openTG()" class="btn-border">Telegram</a>
                 </div>
             </div>
 
@@ -599,7 +600,7 @@
                 <div class="route-info">
                     <h4>Развод мостов</h4>
                     <p>Ночной маршрут по Неве и главным мостам города.</p>
-                    <a href="https://whatsapp.com" class="more-link" target="_blank">Подробнее →</a>
+                    <a onclick="openWA()" class="more-link">Подробнее →</a>
                 </div>
             </div>
             <div class="route-card">
@@ -607,7 +608,7 @@
                 <div class="route-info">
                     <h4>Реки и каналы</h4>
                     <p>Атмосферная прогулка по историческому центру.</p>
-                    <a href="https://whatsapp.com" class="more-link" target="_blank">Подробнее →</a>
+                    <a onclick="openWA()" class="more-link">Подробнее →</a>
                 </div>
             </div>
             <div class="route-card">
@@ -615,7 +616,7 @@
                 <div class="route-info">
                     <h4>Закат на воде</h4>
                     <p>Золотой час Петербурга с лучших ракурсов.</p>
-                    <a href="https://whatsapp.com" class="more-link" target="_blank">Подробнее →</a>
+                    <a onclick="openWA()" class="more-link">Подробнее →</a>
                 </div>
             </div>
             <div class="route-card">
@@ -623,7 +624,7 @@
                 <div class="route-info">
                     <h4>Свой маршрут</h4>
                     <p>Подберем прогулку под ваше настроение.</p>
-                    <a href="https://whatsapp.com" class="more-link" target="_blank">Подробнее →</a>
+                    <a onclick="openWA()" class="more-link">Подробнее →</a>
                 </div>
             </div>
         </div>
@@ -714,6 +715,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- СКРИПТ ГАРАНТИРОВАННОГО ПЕРЕНАПРАВЛЕНИЯ -->
+    <script>
+        function openWA() {
+            // Сначала пробуем запустить родное приложение на устройстве
+            window.location.href = "whatsapp://send?phone=79605828419";
+            // Если через полсекунды приложение не открылось (например, на старом ПК), открываем веб-версию
+            setTimeout(function() {
+                window.open("https://whatsapp.com", "_blank");
+            }, 500);
+        }
+
+        function openTG() {
+            // Напрямую открываем канал в родном приложении Telegram без сайтов-прокладок
+            window.location.href = "tg://resolve?domain=korablik_78";
+            // Запасной вариант для браузера
+            setTimeout(function() {
+                window.open("https://t.me", "_blank");
+            }, 500);
+        }
+    </script>
 
 </body>
 </html>
