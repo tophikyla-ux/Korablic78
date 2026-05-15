@@ -112,13 +112,14 @@
             margin-top: 75px; 
         }
 
+        /* СТИЛИ ОТОБРАЖЕНИЯ ФОТОГРАФИЙ */
         .hero-bg-user, .img-placeholder, .boat-img-placeholder, .gallery-placeholder {
-            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             border: none;
         }
 
+        /* Главное фото растягивается без полей */
         .hero-bg-user {
             position: absolute;
             top: 0; 
@@ -126,7 +127,14 @@
             width: 100%; 
             height: 100%;
             z-index: 1;
+            background-size: cover;
             background-image: linear-gradient(90deg, rgba(7,11,17,0.95) 35%, rgba(7,11,17,0.35) 100%), url('images/hero-main.jpg');
+        }
+
+        /* Карточки маршрутов, катеров и галерея сжимаются ЦЕЛИКОМ и не режутся */
+        .img-placeholder, .boat-img-placeholder, .gallery-placeholder {
+            background-size: contain;
+            background-color: var(--bg-card); /* Темная подложка, чтобы не было пустых белых дыр */
         }
 
         .hero-content {
@@ -553,12 +561,12 @@
                 <p>ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ САНКТ-ПЕТЕРБУРГА</p>
                 <p class="hero-subtext">Развод мостов • Закаты • Индивидуальные маршруты<br>До 7 гостей на борту</p>
                 <div class="hero-buttons">
-                    <a onclick="handleBooking('Главный экран - WhatsApp')" class="btn-fill" target="_blank">WhatsApp</a>
-                    <a onclick="handleTelegramClick()" class="btn-border" target="_blank">Telegram</a>
+                    <a onclick="handleBooking('Главный экран - WhatsApp')" class="btn-fill">WhatsApp</a>
+                    <a onclick="handleTelegramClick()" class="btn-border">Telegram</a>
                 </div>
             </div>
 
-            <!-- ИДЕНТИФИКАЦИЯ ЯКОРЯ -->
+            <!-- ИДЕАЛЬНЫЙ СИЛУЭТ ЯКОРЯ -->
             <a href="#features-block" class="scroll-down-anchor">
                 <svg viewBox="0 0 24 24">
                     <circle cx="12" cy="5" r="1.5"/>
@@ -719,15 +727,13 @@
     <!-- НАСТРОЙКА КАНАЛОВ И СВЯЗИ С ТЕЛЕГРАМ-БОТОМ -->
     <script>
         // ВСТАВЬТЕ СВОИ ДАННЫЕ СЮДА МЕЖДУ КАВЫЧКАМИ
-        const TELEGRAM_BOT_TOKEN = "8725881170:AAGYzgflcBn0yTL-ETrzza44Etb0m8wgWjg"; 
-        const TELEGRAM_CHAT_ID = "Id: 894018653";
+        const TELEGRAM_BOT_TOKEN = "ВАШ_ТОКЕН_БОТА"; 
+        const TELEGRAM_CHAT_ID = "ВАШ_CHAT_ID";
 
-        // Функция отправки уведомления в вашего бота
         function sendBotNotification(actionType) {
             const textMessage = `🔔 Новый клик на сайте Кораблик78!\nДействие: Клиент выбрал "${actionType}".`;
             const telegramUrl = `https://telegram.org{TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-            // Бесплатный фоновый запрос к серверам Telegram API
             fetch(telegramUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -738,22 +744,16 @@
             }).catch(err => console.log("Ошибка отправки боту:", err));
         }
 
-        // Обработка клика по кнопкам бронирования (WhatsApp)
         function handleBooking(sourceName) {
-            sendBotNotification(sourceName); // Шлем сигнал боту
-
-            // Открываем чат WhatsApp напрямую через глубокие протоколы
+            sendBotNotification(sourceName); 
             window.location.href = "whatsapp://send?phone=79605828419";
             setTimeout(function() {
                 window.open("https://whatsapp.com", "_blank");
             }, 400);
         }
 
-        // Обработка перехода в Telegram-канал
         function handleTelegramClick() {
-            sendBotNotification("Переход в Telegram-канал"); // Шлем сигнал боту
-
-            // Запускаем родное приложение Telegram
+            sendBotNotification("Переход в Telegram-канал"); 
             window.location.href = "tg://resolve?domain=korablik_78";
             setTimeout(function() {
                 window.open("https://t.me", "_blank");
