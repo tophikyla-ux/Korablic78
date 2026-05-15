@@ -14,6 +14,10 @@
             --border-gold: rgba(197, 160, 89, 0.3);
         }
 
+        html {
+            scroll-behavior: smooth; /* Плавная прокрутка по клику на меню */
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,12 +37,15 @@
             padding: 0 20px;
         }
 
+        /* НАВИГАЦИЯ */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            z-index: 10;
         }
 
         .logo-area {
@@ -82,6 +89,7 @@
             letter-spacing: 1px;
         }
 
+        /* ГЛАВНЫЙ ЭКРАН */
         .hero-section {
             position: relative;
             height: 75vh;
@@ -91,18 +99,17 @@
             overflow: hidden;
         }
 
+        /* Рамка-место для вашего главного фото */
         .hero-bg-user {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
-            background-color: #151d2a; 
+            border: 2px dashed var(--border-gold);
+            background-color: #0c121c;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-gray);
+            color: var(--accent-gold);
             font-size: 14px;
             letter-spacing: 2px;
         }
@@ -168,6 +175,7 @@
             letter-spacing: 1px;
         }
 
+        /* ПРЕИМУЩЕСТВА */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -203,10 +211,11 @@
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin: 60px 0 40px 0;
+            margin: 70px 0 40px 0;
             position: relative;
         }
 
+        /* МАРШРУТЫ */
         .routes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -220,15 +229,17 @@
             flex-direction: column;
         }
 
+        /* Место для фото маршрута */
         .img-placeholder {
             width: 100%;
             height: 240px;
-            background-color: #1b2432;
+            background-color: #121924;
+            border: 1px dashed var(--border-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-gray);
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
@@ -267,6 +278,7 @@
             margin-top: auto;
         }
 
+        /* КАТЕРА */
         .boats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -279,14 +291,16 @@
             display: flex;
         }
 
+        /* Место для фото катера */
         .boat-img-placeholder {
             width: 45%;
-            background-color: #1b2432;
+            background-color: #121924;
+            border: 1px dashed var(--border-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-gray);
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             text-align: center;
             padding: 10px;
@@ -327,15 +341,18 @@
             width: 15px;
         }
 
+        /* ГАЛЕРЕЯ */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
 
+        /* Место для фото галереи */
         .gallery-placeholder {
             height: 150px;
-            background-color: #1b2432;
+            background-color: #121924;
+            border: 1px dashed var(--border-gold);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -344,6 +361,7 @@
             text-transform: uppercase;
         }
 
+        /* ЦЕНЫ И ОТЗЫВЫ */
         .two-columns {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -399,6 +417,7 @@
             letter-spacing: 1px;
         }
 
+        /* ПОДВАЛ И КАРТА */
         footer {
             border-top: 1px solid var(--border-gold);
             margin-top: 80px;
@@ -434,7 +453,7 @@
 
         .map-container {
             width: 100%;
-            height: 250px;
+            height: 280px;
             border: 1px solid var(--accent-gold);
             border-radius: 4px;
             overflow: hidden;
@@ -461,7 +480,7 @@
 </head>
 <body>
 
-    <!-- ШАПКА -->
+    <!-- ШАПКА С НАВИГАЦИОННЫМИ ЯКОРЯМИ -->
     <div class="container">
         <header>
             <div class="logo-area">
@@ -469,12 +488,11 @@
                 <div class="logo-sub">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ</div>
             </div>
             <nav>
-                <a href="#">Главная</a>
-                <a href="#">Маршруты</a>
-                <a href="#">Катера</a>
-                <a href="#">Цены</a>
-                <a href="#">Отзывы</a>
-                <a href="#">Контакты</a>
+                <a href="#routes">Маршруты</a>
+                <a href="#boats">Катера</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#prices">Цены</a>
+                <a href="#contacts">Контакты</a>
             </nav>
             <a href="https://wa.me" class="header-btn" target="_blank">Забронировать</a>
         </header>
@@ -482,7 +500,7 @@
 
     <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero-section">
-        <div class="hero-bg-user">[ ТУТ БУДЕТ ВАШЕ БОЛЬШОЕ ФОНОЕ ФОТО КАТЕРА ]</div>
+        <div class="hero-bg-user">[ ТУТ БУДЕТ ВАШЕ МЕСТО ДЛЯ ФОНОГО ФОТО КАТЕРА ]</div>
         
         <div class="container" style="width: 100%;">
             <div class="hero-content">
@@ -520,11 +538,11 @@
     </div>
 
     <!-- ПОПУЛЯРНЫЕ МАРШРУТЫ -->
-    <section class="container">
+    <section class="container" id="routes">
         <h2 class="section-title">Популярные маршруты</h2>
         <div class="routes-grid">
             <div class="route-card">
-                <div class="img-placeholder">[ ФОТО: РАЗВОД МОСТОВ ]</div>
+                <div class="img-placeholder">[ МЕСТО ДЛЯ ФОТО:<br>РАЗВОД МОСТОВ ]</div>
                 <div class="route-info">
                     <h4>Развод мостов</h4>
                     <p>Ночной маршрут по Неве и главным мостам города.</p>
@@ -532,7 +550,7 @@
                 </div>
             </div>
             <div class="route-card">
-                <div class="img-placeholder">[ ФОТО: РЕКИ И КАНАЛЫ ]</div>
+                <div class="img-placeholder">[ МЕСТО ДЛЯ ФОТО:<br>РЕКИ И КАНАЛЫ ]</div>
                 <div class="route-info">
                     <h4>Реки и каналы</h4>
                     <p>Атмосферная прогулка по историческому центру.</p>
@@ -540,7 +558,7 @@
                 </div>
             </div>
             <div class="route-card">
-                <div class="img-placeholder">[ ФОТО: ЗАКАТ НА ВОДЕ ]</div>
+                <div class="img-placeholder">[ МЕСТО ДЛЯ ФОТО:<br>ЗАКАТ НА ВОДЕ ]</div>
                 <div class="route-info">
                     <h4>Закат на воде</h4>
                     <p>Золотой час Петербурга с лучших ракурсов.</p>
@@ -548,7 +566,7 @@
                 </div>
             </div>
             <div class="route-card">
-                <div class="img-placeholder">[ ФОТО: ИНДИВИДУАЛЬНЫЙ ]</div>
+                <div class="img-placeholder">[ МЕСТО ДЛЯ ФОТО:<br>ИНДИВИДУАЛЬНЫЙ ]</div>
                 <div class="route-info">
                     <h4>Свой маршрут</h4>
                     <p>Подберем прогулку под ваше настроение.</p>
@@ -559,11 +577,11 @@
     </section>
 
     <!-- НАШИ КАТЕРА -->
-    <section class="container">
+    <section class="container" id="boats">
         <h2 class="section-title">Наши катера</h2>
         <div class="boats-grid">
             <div class="boat-card">
-                <div class="boat-img-placeholder">[ ФОТО КАТЕРА PREMIUM ]</div>
+                <div class="boat-img-placeholder">[ МЕСТО ДЛЯ ФОТО<br>КАТЕРА PREMIUM ]</div>
                 <div class="boat-info">
                     <h4>Катер Premium</h4>
                     <ul>
@@ -575,7 +593,7 @@
                 </div>
             </div>
             <div class="boat-card">
-                <div class="boat-img-placeholder">[ ФОТО КАТЕРА CLASSIC ]</div>
+                <div class="boat-img-placeholder">[ МЕСТО ДЛЯ ФОТО<br>КАТЕРА CLASSIC ]</div>
                 <div class="boat-info">
                     <h4>Катер Classic</h4>
                     <ul>
@@ -590,7 +608,7 @@
     </section>
 
     <!-- ГАЛЕРЕЯ -->
-    <section class="container">
+    <section class="container" id="gallery">
         <h2 class="section-title">Галерея</h2>
         <div class="gallery-grid">
             <div class="gallery-placeholder">[ ФОТО ГАЛЕРЕИ 1 ]</div>
@@ -601,7 +619,7 @@
     </section>
 
     <!-- ЦЕНЫ И ОТЗЫВЫ -->
-    <div class="container two-columns">
+    <div class="container two-columns" id="prices">
         <div>
             <h2 class="section-title" style="text-align: left; margin-top: 0;">Цены</h2>
             <div class="price-list">
@@ -625,8 +643,8 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ С ИНТЕРАКТИВНОЙ КАРТОЙ -->
-    <footer class="container">
+    <!-- ПОДВАЛ С ИСПРАВЛЕННОЙ КАРТОЙ -->
+    <footer class="container" id="contacts">
         <div class="footer-grid">
             <div class="contacts-info">
                 <h3>Контакты</h3>
@@ -637,7 +655,7 @@
                 <p><strong>Режим:</strong> Ежедневно с 10:00 до 02:00</p>
             </div>
             <div class="map-container">
-                <!-- Интерактивный виджет Яндекс Карт по вашим координатам -->
+                <!-- Новый стабильный iframe Яндекс.Карт без блокировок -->
                 <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);"></iframe>
             </div>
         </div>
