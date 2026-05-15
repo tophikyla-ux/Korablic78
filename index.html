@@ -15,7 +15,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Плавная прокрутка по клику на меню */
+            scroll-behavior: smooth; 
         }
 
         * {
@@ -50,6 +50,8 @@
 
         .logo-area {
             text-align: left;
+            text-decoration: none; /* Убирает подчеркивание с логотипа-ссылки */
+            display: block;
         }
 
         .logo-title {
@@ -99,7 +101,6 @@
             overflow: hidden;
         }
 
-        /* Рамка-место для вашего главного фото */
         .hero-bg-user {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -211,7 +212,7 @@
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin: 70px 0 40px 0;
+            margin: 60px 0 40px 0;
             position: relative;
         }
 
@@ -229,7 +230,6 @@
             flex-direction: column;
         }
 
-        /* Место для фото маршрута */
         .img-placeholder {
             width: 100%;
             height: 240px;
@@ -291,7 +291,6 @@
             display: flex;
         }
 
-        /* Место для фото катера */
         .boat-img-placeholder {
             width: 45%;
             background-color: #121924;
@@ -348,7 +347,6 @@
             gap: 15px;
         }
 
-        /* Место для фото галереи */
         .gallery-placeholder {
             height: 150px;
             background-color: #121924;
@@ -480,14 +478,20 @@
 </head>
 <body>
 
-    <!-- ШАПКА С НАВИГАЦИОННЫМИ ЯКОРЯМИ -->
+    <!-- ИДЕНТИФИКАТОР ДЛЯ СТАРТА СТРАНИЦЫ -->
+    <div id="main-top"></div>
+
+    <!-- ШАПКА -->
     <div class="container">
         <header>
-            <div class="logo-area">
+            <!-- Ссылка на самый верх по клику на логотип -->
+            <a href="#main-top" class="logo-area">
                 <div class="logo-title">КОРАБЛИК78</div>
                 <div class="logo-sub">ПРОГУЛКИ ПО РЕКАМ И КАНАЛАМ</div>
-            </div>
+            </a>
             <nav>
+                <!-- Ссылка возвращает на главный экран -->
+                <a href="#main-top">Главная</a>
                 <a href="#routes">Маршруты</a>
                 <a href="#boats">Катера</a>
                 <a href="#gallery">Галерея</a>
@@ -643,7 +647,7 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ С ИСПРАВЛЕННОЙ КАРТОЙ -->
+    <!-- ПОДВАЛ И КАРТА -->
     <footer class="container" id="contacts">
         <div class="footer-grid">
             <div class="contacts-info">
@@ -655,7 +659,6 @@
                 <p><strong>Режим:</strong> Ежедневно с 10:00 до 02:00</p>
             </div>
             <div class="map-container">
-                <!-- Новый стабильный iframe Яндекс.Карт без блокировок -->
                 <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);"></iframe>
             </div>
         </div>
@@ -663,3 +666,4 @@
 
 </body>
 </html>
+
