@@ -1,141 +1,29 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>КОРАБЛИК78</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #070B11;
-    color: white;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.4)),
-    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 50px;
-    color: #C5A059;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #ccc;
-}
-
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 22px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-wa { background: #25D366; color: white; }
-.btn-tg { background: #229ED9; color: white; }
-
-/* SCROLL ANCHOR */
-.scroll {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #C5A059;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-.scroll svg {
-    width: 30px;
-    height: 30px;
-    stroke: #C5A059;
-    fill: none;
-}
-
-@keyframes bounce {
-    0%,100% { transform: translate(-50%,0); }
-    50% { transform: translate(-50%,-10px); }
-}
-
-/* SECTION */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-    <div>
-        <h1>КОРАБЛИК78</h1>
-        <p>Прогулки по рекам и каналам Санкт-Петербурга</p>
-
-        <div>
-            <a class="btn btn-wa" onclick="openWA()">WhatsApp</a>
-            <a class="btn btn-tg" onclick="openTG()">Telegram</a>
-        </div>
-    </div>
-
-    <!-- ЯКОРЬ -->
-    <a class="scroll" href="#next">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 5v14"></path>
-            <path d="M6 13l6 6 6-6"></path>
-        </svg>
-        <div>Листай вниз</div>
-    </a>
-</div>
-
-<!-- CONTENT -->
-<section id="next">
-    <h2 style="color:#C5A059;">О нас</h2>
-    <p>Прогулки по Неве, развод мостов и закаты.</p>
-</section>
-
 <script>
-const BOT_TOKEN = "8725881170:AAGYzgflcBn0yTL-ETrzza44Etb0m8wgWjg";
+const BOT_TOKEN = "ВСТАВЬ_НОВЫЙ_ТОКЕН_ОТ_BOTFATHER";
 const CHAT_ID = "8725881170";
 
 function sendTelegram(text) {
-    fetch(https://api.telegram.org/bot${BOT_TOKEN}/sendMessage, {
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: "POST",
-        headers: {"Content-Type":"application/json"},
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             chat_id: CHAT_ID,
             text: text
         })
-    });
+    }).catch(() => {});
 }
 
+/* WhatsApp */
 function openWA() {
-    sendTelegram("🚤 Заявка с сайта: WhatsApp");
+    sendTelegram("🚤 Новая заявка с сайта: WhatsApp");
     window.open("https://wa.me/79605828419", "_blank");
 }
 
+/* Telegram */
 function openTG() {
-    sendTelegram("🚤 Заявка с сайта: Telegram");
+    sendTelegram("🚤 Новая заявка с сайта: Telegram");
     window.open("https://t.me/korablik_78", "_blank");
 }
 </script>
-
-</body>
-</html>
