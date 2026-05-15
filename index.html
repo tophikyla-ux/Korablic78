@@ -1,29 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сайт</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+}
+
+/* Главный блок */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    opacity: 0.7;
+}
+
+/* кнопки */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: #25D366;
+    transition: 0.3s;
+}
+
+.btn.tg {
+    background: #229ED9;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* скролл вниз */
+.scroll-down-anchor {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: gold;
+    text-decoration: none;
+    animation: float 2s infinite ease-in-out;
+}
+
+.scroll-icon {
+    font-size: 22px;
+}
+
+.scroll-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes float {
+    0%,100% { transform: translate(-50%,0); opacity: 0.6; }
+    50% { transform: translate(-50%, -6px); opacity: 1; }
+}
+
+/* второй блок */
+.section {
+    height: 100vh;
+    padding: 60px;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ГЛАВНЫЙ БЛОК -->
+<div class="hero">
+
+    <h1>Добро пожаловать</h1>
+    <p>Свяжитесь со мной удобным способом</p>
+
+    <a class="btn" href="https://wa.me/79605828419" target="_blank" onclick="sendTelegram('Нажали WhatsApp')">
+        WhatsApp
+    </a>
+
+    <a class="btn tg" href="https://t.me/your_username" target="_blank" onclick="sendTelegram('Нажали Telegram')">
+        Telegram
+    </a>
+
+    <!-- ЛИСТАЙ ВНИЗ -->
+    <a href="#next" class="scroll-down-anchor">
+        <div class="scroll-icon">↓</div>
+        <div class="scroll-text">Листай вниз</div>
+    </a>
+
+</div>
+
+<!-- ВТОРОЙ БЛОК -->
+<div id="next" class="section">
+    <h2>Обо мне / услуги</h2>
+    <p>Здесь будет твой контент</p>
+</div>
+
 <script>
+/* 8725881170:AAGYzgflcBn0yTL-ETrzza44Etb0m8wgWjg */
 const BOT_TOKEN = "8725881170:AAGYzgflcBn0yTL-ETrzza44Etb0m8wgWjg";
 const CHAT_ID = "8725881170";
 
+/* отправка в Telegram */
 function sendTelegram(text) {
     fetch(https://api.telegram.org/bot${BOT_TOKEN}/sendMessage, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             chat_id: CHAT_ID,
             text: text
         })
     }).catch(() => {});
 }
-
-/* WhatsApp */
-function openWA() {
-    sendTelegram("🚤 Новая заявка с сайта: WhatsApp");
-    window.open("https://wa.me/79605828419", "_blank");
-}
-
-/* Telegram */
-function openTG() {
-    sendTelegram("🚤 Новая заявка с сайта: Telegram");
-    window.open("https://t.me/korablik_78", "_blank");
-}
 </script>
+
+</body>
+</html>
